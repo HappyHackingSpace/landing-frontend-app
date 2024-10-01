@@ -3,6 +3,7 @@ import { geistMono, geistSans } from "@hhs/assets/fonts";
 import ThemeProvider from "@hhs/providers/theme-provider";
 
 import "@hhs/assets/styles/globals.css";
+import { ChildrenProps } from "@hhs/types/layout-props";
 
 export const metadata: Metadata = {
   title: "Happy Hacking Space",
@@ -18,13 +19,9 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: ChildrenProps) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
