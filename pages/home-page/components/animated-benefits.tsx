@@ -1,4 +1,3 @@
-"use client";
 import { AnimatedList } from "@hhs/components/custom/animated-list";
 import { BENEFITS } from "@hhs/constants/home";
 import { cn } from "@hhs/utils/cn";

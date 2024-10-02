@@ -9,7 +9,7 @@ export interface AnimatedListProps extends ChildrenProps {
 }
 
 export const AnimatedList = React.memo(
-  ({ className, children, delay = 2000 }: AnimatedListProps) => {
+  ({ className, children, delay = 1500 }: AnimatedListProps) => {
     const [index, setIndex] = React.useState(0);
     const [isHovered, setIsHovered] = React.useState(false);
     const childrenArray = React.Children.toArray(children);
