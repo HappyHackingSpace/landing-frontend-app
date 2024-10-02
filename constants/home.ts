@@ -94,3 +94,45 @@ export const MOTION_IMAGES = [
     },
   },
 ];
+
+export const FAQ_ITEMS = [
+  {
+    trigger: "What is Happy Hacking Space?",
+    content:
+      "Happy Hacking Space is a nonprofit community fostering curiosity, creativity, and collaboration. We believe in abundance through mutual support and collective imagination.",
+  },
+  {
+    trigger: "What support do you offer?",
+    content:
+      "We offer mentor support, online and in-person training, and networking opportunities, helping you grow in software development, product, and more.",
+  },
+  {
+    trigger: "Who can join?",
+    content:
+      "Our community members are selected based on local engagement and interaction, ensuring a more effective and solution-driven environment.",
+  },
+  {
+    trigger: "Can I contribute and learn?",
+    content:
+      "Absolutely! Whether you're contributing or learning, you are welcome to be part of our collaborative and supportive community.",
+  },
+];
+
+export let BENEFITS = [
+  {
+    info: "Mentor Support",
+  },
+  {
+    info: "Online Training",
+  },
+  {
+    info: "Networking",
+  },
+  {
+    info: "Curated Community Membership",
+  },
+  {
+    info: "In-Person Training",
+  },
+];
+

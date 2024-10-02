@@ -18,23 +18,19 @@ import { NAV_ITEMS } from "@hhs/constants/layout";
 import ThemeSwitcher from "@hhs/components/custom/theme-switcher";
 import Image from "next/image";
 
-const Logo = () => (
-  <Link href="/">
-    <Image
-      src="/assets/hhs.avif"
-      width={40}
-      height={40}
-      alt="Happy Hacking Space"
-    />
-  </Link>
-);
-
 const LandingHeader = () => {
   return (
-    <header className="sticky top-4 z-50 sm:bg-background sm:rounded-md sm:border sm:p-2 sm:shadow-sm hover:shadow-none transition-colors duration-200 border">
+    <header className="sticky top-4 z-50 bg-background rounded-md p-1 md:p-2 shadow-sm hover:shadow-none transition-colors duration-200 border">
       {/* desktop */}
       <div className="justify-between items-center shrink-0 hidden md:flex">
-        <Logo />
+        <Link href="/">
+          <Image
+            src="/assets/hhs.avif"
+            width={40}
+            height={40}
+            alt="Happy Hacking Space"
+          />
+        </Link>
         <div className="flex items-center gap-12">
           <NavigationMenu>
             <NavigationMenuList>
@@ -52,10 +48,10 @@ const LandingHeader = () => {
       </div>
 
       {/* mobile */}
-      <div className="flex justify-between">
+      <div className="flex justify-between md:hidden ">
         <Drawer>
           <DrawerTrigger asChild>
-            <Button className="md:hidden" size="icon" variant="outline">
+            <Button size="icon" variant="outline">
               <Menu size={20} className="text-gray-500" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
@@ -99,7 +95,9 @@ const LandingHeader = () => {
           </DrawerContent>
         </Drawer>
 
-        <Logo />
+        <ThemeSwitcher />
+
+        {/* <Logo /> */}
       </div>
     </header>
   );
