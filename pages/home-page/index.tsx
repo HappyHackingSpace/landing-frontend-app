@@ -36,6 +36,8 @@ const HomePageView = () => {
         </GradientHeading>
         <AccordionFaq data={FAQ_ITEMS} />
       </section>
+
+      <section></section>
     </div>
   );
 };

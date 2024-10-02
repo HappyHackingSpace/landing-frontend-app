@@ -1,16 +1,15 @@
 "use client";
-
 import * as React from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { ChildrenProps } from "@hhs/types/layout-props";
 
-export interface AnimatedListProps {
+export interface AnimatedListProps extends ChildrenProps {
   className?: string;
-  children: React.ReactNode;
   delay?: number;
 }
 
 export const AnimatedList = React.memo(
-  ({ className, children, delay = 1500 }: AnimatedListProps) => {
+  ({ className, children, delay = 2000 }: AnimatedListProps) => {
     const [index, setIndex] = React.useState(0);
     const [isHovered, setIsHovered] = React.useState(false);
     const childrenArray = React.Children.toArray(children);
