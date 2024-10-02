@@ -18,11 +18,9 @@ import { NAV_ITEMS } from "@hhs/constants/layout";
 import ThemeSwitcher from "@hhs/components/custom/theme-switcher";
 import Image from "next/image";
 
-interface LandingHeaderProps {}
-
-function LandingHeader({}: LandingHeaderProps) {
+const LandingHeader = () => {
   return (
-    <header className="sticky top-4 z-50 sm:bg-background sm:rounded-md sm:border sm:p-2 sm:shadow-sm hover:shadow-none transition-colors duration-200">
+    <header className="sticky top-4 z-50 bg-background rounded-md p-1 md:p-2 shadow-sm hover:shadow-none transition-colors duration-200 border">
       {/* desktop */}
       <div className="justify-between items-center shrink-0 hidden md:flex">
         <Link href="/">
@@ -32,7 +30,6 @@ function LandingHeader({}: LandingHeaderProps) {
             height={40}
             alt="Happy Hacking Space"
           />
-          <span className="sr-only">Company Logo</span>
         </Link>
         <div className="flex items-center gap-12">
           <NavigationMenu>
@@ -51,50 +48,59 @@ function LandingHeader({}: LandingHeaderProps) {
       </div>
 
       {/* mobile */}
-      <Drawer>
-        <DrawerTrigger asChild>
-          <Button className="md:hidden" size="icon" variant="outline">
-            <Menu size={20} className="text-gray-500" />
-            <span className="sr-only">Toggle navigation menu</span>
-          </Button>
-        </DrawerTrigger>
-        <DrawerContent className="min-h-80">
-          <div className="grid gap-4 p-6 pt-8">
-            <DrawerClose asChild>
-              <Link href="/" className="flex items-center gap-2 border-b pb-4">
-                <Image
-                  src="/assets/hhs.avif"
-                  width={24}
-                  height={24}
-                  alt="Happy Hacking Space"
-                />
-                <span className="sr-only">HHS Community Logo</span>
-                <GradientHeading
-                  variant="default"
-                  weight="semi"
-                  size="xs"
-                  className="text-center cursor-pointer"
-                >
-                  Happy Hacking Space
-                </GradientHeading>
-              </Link>
-            </DrawerClose>
-
-            {NAV_ITEMS.map((item) => (
-              <DrawerClose asChild key={item.label}>
+      <div className="flex justify-between md:hidden ">
+        <Drawer>
+          <DrawerTrigger asChild>
+            <Button size="icon" variant="outline">
+              <Menu size={20} className="text-gray-500" />
+              <span className="sr-only">Toggle navigation menu</span>
+            </Button>
+          </DrawerTrigger>
+          <DrawerContent className="min-h-80">
+            <div className="grid gap-4 p-6 pt-8">
+              <DrawerClose asChild>
                 <Link
-                  className="flex w-full items-center py-1 text-lg font-semibold"
-                  href={item.href}
+                  href="/"
+                  className="flex items-center gap-2 border-b pb-4"
                 >
-                  {item.label}
+                  <Image
+                    src="/assets/hhs.avif"
+                    width={24}
+                    height={24}
+                    alt="Happy Hacking Space"
+                  />
+                  <span className="sr-only">HHS Community Logo</span>
+                  <GradientHeading
+                    variant="default"
+                    weight="semi"
+                    size="xs"
+                    className="text-center cursor-pointer"
+                  >
+                    Happy Hacking Space
+                  </GradientHeading>
                 </Link>
               </DrawerClose>
-            ))}
-          </div>
-        </DrawerContent>
-      </Drawer>
+
+              {NAV_ITEMS.map((item) => (
+                <DrawerClose asChild key={item.label}>
+                  <Link
+                    className="flex w-full items-center py-1 text-lg font-semibold"
+                    href={item.href}
+                  >
+                    {item.label}
+                  </Link>
+                </DrawerClose>
+              ))}
+            </div>
+          </DrawerContent>
+        </Drawer>
+
+        <ThemeSwitcher />
+
+        {/* <Logo /> */}
+      </div>
     </header>
   );
-}
+};
 
 export default LandingHeader;

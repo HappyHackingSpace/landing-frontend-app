@@ -36,10 +36,6 @@ export const SOCIAL_LINKS = [
 
 export const NAV_ITEMS = [
   {
-    label: "Team",
-    href: "/team",
-  },
-  {
     label: "Shoots",
     href: "/shoots",
   },
