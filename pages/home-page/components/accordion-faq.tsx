@@ -5,8 +5,6 @@ import {
   AccordionTrigger,
 } from "@hhs/components/shadcn/accordion";
 
-interface FaqItem {}
-
 interface AccordionFaqProps {
   data: { trigger: string; content: string }[];
 }
@@ -14,7 +12,7 @@ interface AccordionFaqProps {
 const AccordionFaq = ({ data }: AccordionFaqProps) => {
   return (
     <Accordion type="single" collapsible className="max-w-[840px] mx-auto">
-      {data.map((item, index) => (
+      {data?.map((item, index) => (
         <AccordionItem key={index} value={`item-${index + 1}`}>
           <AccordionTrigger className="text-lg md:text-xl !cursor-help">
             {item.trigger}

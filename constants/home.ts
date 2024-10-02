@@ -6,7 +6,7 @@ const CARD_WIDTH = 48 * 4;
 
 export const MOTION_IMAGES = [
   {
-    src: "https://www.rsgicmimarlik.com/images/projeler/hastane-saglik-yapilari/ekol-estetik/20160909-ekol-estetik-03.jpg",
+    src: "/shoots/one.avif",
     initial: { x: CARD_WIDTH, y: Y_OFFSET, opacity: 0, rotate: 0, scale: 0.9 },
     animate: {
       x: Y_OFFSET,
@@ -18,7 +18,7 @@ export const MOTION_IMAGES = [
     },
   },
   {
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyXSaNsgJ_cSNIK-mInpCruICQ7hLU_pVWNQ&s",
+    src: "/shoots/two.avif",
     initial: { y: Y_OFFSET, opacity: 0 },
     animate: {
       y: ANIMATE_Y * 1.5,
@@ -28,7 +28,7 @@ export const MOTION_IMAGES = [
     zIndexOffset: 1,
   },
   {
-    src: "https://www.lavitashotels.com/assets/uploads/rio/dining/beachsneackbar-1.jpg",
+    src: "/shoots/three.avif",
     initial: {
       x: -CARD_WIDTH,
       y: Y_OFFSET,
@@ -46,7 +46,7 @@ export const MOTION_IMAGES = [
     },
   },
   {
-    src: "https://www.atilimyazilim.com/wp-content/uploads/2020/04/laser-clinic-vaughan-1080x675-1024x640.jpg",
+    src: "/shoots/four.avif",
     initial: { x: CARD_WIDTH, y: Y_OFFSET, opacity: 0, rotate: 0, scale: 0.9 },
     animate: {
       x: Y_OFFSET,
@@ -58,7 +58,7 @@ export const MOTION_IMAGES = [
     },
   },
   {
-    src: "https://wawainteriors.com/wp-content/uploads/2017/10/spor-salonu-tasarimlari-5.jpg",
+    src: "/shoots/five.avif",
     initial: {
       x: -CARD_WIDTH,
       y: Y_OFFSET,
@@ -76,7 +76,7 @@ export const MOTION_IMAGES = [
     },
   },
   {
-    src: "https://wawainteriors.com/wp-content/uploads/2017/10/spor-salonu-tasarimlari-5.jpg",
+    src: "/shoots/six.avif",
     initial: {
       x: 0,
       y: Y_OFFSET,
@@ -135,4 +135,3 @@ export let BENEFITS = [
     info: "In-Person Training",
   },
 ];
-

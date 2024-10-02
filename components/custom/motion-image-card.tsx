@@ -7,6 +7,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { cn } from "@hhs/utils/cn";
+import Image from "next/image";
 
 interface MotionImageProps extends HTMLMotionProps<"div"> {
   src: string;
@@ -26,11 +27,18 @@ const MotionImageCard = (props: MotionImageProps) => {
   const scale = useTransform(springValue, [0, 1], [1, 1.1]);
 
   const content = (
-    <img
+    <Image
       src={src}
       alt="Happy Hacking Space"
       className="relative h-full w-full object-cover aspect-square p-1 bg-background rounded-md"
       draggable={false}
+      sizes="100vw"
+      style={{
+        width: "100%",
+        height: "auto",
+      }}
+      width={500}
+      height={300}
     />
   );
 
