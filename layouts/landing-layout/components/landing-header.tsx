@@ -17,6 +17,7 @@ import { Button } from "@hhs/components/shadcn/button";
 import { NAV_ITEMS } from "@hhs/constants/layout";
 import ThemeSwitcher from "@hhs/components/custom/theme-switcher";
 import Image from "next/image";
+import { SITE_TITLE } from "@hhs/constants/metadata";
 
 const LandingHeader = () => {
   return (
@@ -28,7 +29,7 @@ const LandingHeader = () => {
             src="/assets/hhs.avif"
             width={40}
             height={40}
-            alt="Happy Hacking Space"
+            alt={SITE_TITLE}
           />
         </Link>
         <div className="flex items-center gap-12">
@@ -67,7 +68,7 @@ const LandingHeader = () => {
                     src="/assets/hhs.avif"
                     width={24}
                     height={24}
-                    alt="Happy Hacking Space"
+                    alt={SITE_TITLE}
                   />
                   <span className="sr-only">HHS Community Logo</span>
                   <GradientHeading
@@ -76,7 +77,7 @@ const LandingHeader = () => {
                     size="xs"
                     className="text-center cursor-pointer"
                   >
-                    Happy Hacking Space
+                    {SITE_TITLE}
                   </GradientHeading>
                 </Link>
               </DrawerClose>
