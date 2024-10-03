@@ -1,4 +1,5 @@
 import { BlurFade } from "@hhs/components/custom/blur-fade";
+import { SITE_TITLE } from "@hhs/constants/metadata";
 import { SHOOTS } from "@hhs/constants/shoots";
 import Image from "next/image";
 
@@ -11,7 +12,7 @@ const ShootsPageView = () => {
             <Image
               className="mb-4 size-full rounded-lg object-contain"
               src={src}
-              alt={`Happy Hacking Space Shoot ${idx + 1}`}
+              alt={`${SITE_TITLE} Shoot ${idx + 1}`}
               draggable={false}
               sizes="100vw"
               style={{

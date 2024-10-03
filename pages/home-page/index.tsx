@@ -1,5 +1,6 @@
 import { GradientHeading } from "@hhs/components/custom/gradient-heading";
 import { FAQ_ITEMS, MOTION_IMAGES } from "@hhs/constants/home";
+import { SITE_TITLE } from "@hhs/constants/metadata";
 import AccordionFaq from "@hhs/pages/home-page/components/accordion-faq";
 import AnimatedBenefits from "@hhs/pages/home-page/components/animated-benefits";
 import MotionImageWrapper from "@hhs/pages/home-page/components/motion-image-wrapper";
@@ -9,7 +10,7 @@ const HomePageView = () => {
     <div className="space-y-8">
       <section className="grid lg:grid-cols-2 gap-4 items-center">
         <div className="flex max-w-lg flex-col items-center text-center gap-2">
-          <GradientHeading>Happy Hacking Space</GradientHeading>
+          <GradientHeading>{SITE_TITLE}</GradientHeading>
           <p className="block text-xl text-pretty">
             A nonprofit community driven by curiosity and exploration, rejecting
             the myth of scarcity, believing in an economy of abundance through
