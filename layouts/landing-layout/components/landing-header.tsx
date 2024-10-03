@@ -35,13 +35,22 @@ const LandingHeader = () => {
         <div className="flex items-center gap-12">
           <NavigationMenu>
             <NavigationMenuList>
-              {NAV_ITEMS.map((item) => (
-                <Link key={item.label} legacyBehavior passHref href={item.href}>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    {item.label}
-                  </NavigationMenuLink>
-                </Link>
-              ))}
+              {NAV_ITEMS.filter((item) => item.device.includes("desktop")).map(
+                (item) => (
+                  <Link
+                    key={item.label}
+                    legacyBehavior
+                    passHref
+                    href={item.href}
+                  >
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {item.label}
+                    </NavigationMenuLink>
+                  </Link>
+                )
+              )}
             </NavigationMenuList>
           </NavigationMenu>
           <ThemeSwitcher />
@@ -59,39 +68,36 @@ const LandingHeader = () => {
           </DrawerTrigger>
           <DrawerContent className="min-h-80">
             <div className="grid gap-4 p-6 pt-8">
-              <DrawerClose asChild>
-                <Link
-                  href="/"
-                  className="flex items-center gap-2 border-b pb-4"
+              <div className="flex items-center gap-2 border-b pb-4">
+                <Image
+                  src="/assets/hhs.avif"
+                  width={24}
+                  height={24}
+                  alt={SITE_TITLE}
+                />
+                <span className="sr-only">HHS Community Logo</span>
+                <GradientHeading
+                  variant="default"
+                  weight="semi"
+                  size="xs"
+                  className="text-center cursor-pointer"
                 >
-                  <Image
-                    src="/assets/hhs.avif"
-                    width={24}
-                    height={24}
-                    alt={SITE_TITLE}
-                  />
-                  <span className="sr-only">HHS Community Logo</span>
-                  <GradientHeading
-                    variant="default"
-                    weight="semi"
-                    size="xs"
-                    className="text-center cursor-pointer"
-                  >
-                    {SITE_TITLE}
-                  </GradientHeading>
-                </Link>
-              </DrawerClose>
+                  {SITE_TITLE}
+                </GradientHeading>
+              </div>
 
-              {NAV_ITEMS.map((item) => (
-                <DrawerClose asChild key={item.label}>
-                  <Link
-                    className="flex w-full items-center py-1 text-lg font-semibold"
-                    href={item.href}
-                  >
-                    {item.label}
-                  </Link>
-                </DrawerClose>
-              ))}
+              {NAV_ITEMS.filter((item) => item.device.includes("mobile")).map(
+                (item) => (
+                  <DrawerClose asChild key={item.label}>
+                    <Link
+                      className="flex w-full items-center py-1 text-lg font-semibold"
+                      href={item.href}
+                    >
+                      {item.label}
+                    </Link>
+                  </DrawerClose>
+                )
+              )}
             </div>
           </DrawerContent>
         </Drawer>
