@@ -1,5 +1,8 @@
 import { SITE } from "@hhs/constants/metadata";
 
+export const HERO_DESCRIPTION =
+  "A nonprofit community driven by curiosity and exploration, rejecting the myth of scarcity, believing in an economy of abundance through collaboration and mutual support, while championing collective imagination and creative resilience.";
+
 const ANGLE = 6;
 const Y_OFFSET = 48;
 const ANIMATE_Y = 56;
@@ -119,7 +122,7 @@ export const FAQ_ITEMS = [
   },
 ];
 
-export let BENEFITS = [
+export const BENEFITS = [
   {
     info: "Mentor Support",
   },

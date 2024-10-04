@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SOCIAL_LINKS } from "@hhs/constants/layout";
+import { FOOTER, SOCIAL_LINKS } from "@hhs/constants/layout";
 import { Heart } from "lucide-react";
 import { GradientHeading } from "@hhs/components/custom/gradient-heading";
 import ThemeSwitcher from "@hhs/components/custom/theme-switcher";
@@ -40,10 +40,7 @@ function LandingFooter({}: LandingFooterProps) {
           </div>
 
           <p className="text-gray-500 text-sm text-balance">
-            A nonprofit community driven by curiosity and exploration, rejecting
-            the myth of scarcity, believing in an economy of abundance through
-            collaboration and mutual support, while championing collective
-            imagination and creative resilience.
+            {FOOTER.description}
           </p>
 
           <div className="flex gap-4">
@@ -62,9 +59,7 @@ function LandingFooter({}: LandingFooterProps) {
       </div>
 
       <div className="flex flex-col md:flex-row  items-center justify-between gap-2 shrink-0 w-full">
-        <p className="text-gray-400 text-xs">
-          © 2024 HHS Community. All rights reserved.
-        </p>
+        <p className="text-gray-400 text-xs">{FOOTER.copyRight}</p>
 
         <ThemeSwitcher />
       </div>

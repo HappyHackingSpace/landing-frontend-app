@@ -37,17 +37,20 @@ export const SOCIAL_LINKS = [
 export const NAV_ITEMS = [
   {
     label: "Home",
-    device: ["mobile"],
     href: "/",
   },
   {
     label: "Manifesto",
-    device: ["mobile", "desktop"],
     href: "/manifesto",
   },
   {
     label: "Shoots",
-    device: ["mobile", "desktop"],
     href: "/shoots",
   },
 ];
+
+export const FOOTER = {
+  description:
+    "Happy Hacking Space is a community of makers, creators, and developers who are passionate about building products and services that make the world a better place.",
+  copyRight: `© ${new Date().getFullYear()} HHS. All rights reserved.`,
+};
