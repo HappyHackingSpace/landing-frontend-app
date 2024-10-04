@@ -4,12 +4,7 @@ import ThemeProvider from "@hhs/providers/theme-provider";
 
 import "@hhs/assets/styles/globals.css";
 import { ChildrenProps } from "@hhs/types/layout-props";
-import {
-  SITE_DESCRIPTION,
-  SITE_TITLE,
-  SITE_URL,
-  SOCIALS,
-} from "@hhs/constants/metadata";
+import { SITE, SOCIALS } from "@hhs/constants/metadata";
 
 export default function RootLayout({ children }: ChildrenProps) {
   return (
@@ -30,16 +25,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`${SITE_URL}`),
+  metadataBase: new URL(`${SITE.url}`),
   robots: {
     index: true,
     follow: true,
   },
   title: {
-    default: SITE_TITLE,
-    template: `%s — ${SITE_TITLE}`,
+    default: SITE.title,
+    template: `%s — ${SITE.title}`,
   },
-  description: SITE_DESCRIPTION,
+  description: SITE.description,
   keywords: [
     "happy hacking space",
     "happy hacking",
@@ -49,13 +44,13 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: {
-      default: SITE_TITLE,
-      template: `%s — ${SITE_TITLE}`,
+      default: SITE.title,
+      template: `%s — ${SITE.title}`,
     },
-    description: SITE_DESCRIPTION,
+    description: SITE.description,
     type: "website",
-    url: SITE_URL,
-    siteName: SITE_TITLE,
+    url: SITE.url,
+    siteName: SITE.title,
     locale: "en_IE",
   },
   alternates: {

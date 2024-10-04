@@ -1,7 +1,7 @@
-import { OG_IMAGE, SITE_URL } from "@hhs/constants/metadata";
+import { OG_IMAGE, SITE } from "@hhs/constants/metadata";
 import { ImageResponse } from "next/og";
 
-export const alt = SITE_URL;
+export const alt = SITE.title;
 export const size = {
   width: 32,
   height: 32,

@@ -4,7 +4,7 @@ import { Heart } from "lucide-react";
 import { GradientHeading } from "@hhs/components/custom/gradient-heading";
 import ThemeSwitcher from "@hhs/components/custom/theme-switcher";
 import Image from "next/image";
-import { SITE_TITLE } from "@hhs/constants/metadata";
+import { SITE } from "@hhs/constants/metadata";
 
 interface LandingFooterProps {}
 
@@ -19,12 +19,12 @@ function LandingFooter({}: LandingFooterProps) {
                 src="/assets/hhs.avif"
                 width={44}
                 height={44}
-                alt={SITE_TITLE}
+                alt={SITE.title}
               />
             </Link>
             <div>
               <GradientHeading variant="default" weight="semi" size="md">
-                {SITE_TITLE}
+                {SITE.title}
               </GradientHeading>
               <Link
                 target="_blank"

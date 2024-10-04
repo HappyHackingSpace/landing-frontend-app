@@ -1,10 +1,10 @@
 import { ImageResponse } from "next/og";
 
 import OpenGraphImage from "@hhs/components/custom/og-image";
-import { OG_IMAGE, SITE_TITLE } from "@hhs/constants/metadata";
+import { OG_IMAGE, SITE } from "@hhs/constants/metadata";
 import { getBoldFont, getRegularFont } from "@hhs/utils/fonts";
 
-export const alt = SITE_TITLE;
+export const alt = SITE.title;
 export const size = {
   width: OG_IMAGE.width,
   height: OG_IMAGE.height,

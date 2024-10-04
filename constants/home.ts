@@ -1,4 +1,4 @@
-import { SITE_TITLE } from "@hhs/constants/metadata";
+import { SITE } from "@hhs/constants/metadata";
 
 const ANGLE = 6;
 const Y_OFFSET = 48;
@@ -99,8 +99,8 @@ export const MOTION_IMAGES = [
 
 export const FAQ_ITEMS = [
   {
-    trigger: `What is ${SITE_TITLE}?`,
-    content: `${SITE_TITLE} is a nonprofit community fostering curiosity, creativity, and collaboration. We believe in abundance through mutual support and collective imagination.`,
+    trigger: `What is ${SITE.title}?`,
+    content: `${SITE.title} is a nonprofit community fostering curiosity, creativity, and collaboration. We believe in abundance through mutual support and collective imagination.`,
   },
   {
     trigger: "What support do you offer?",

@@ -1,4 +1,4 @@
-import { SHOOTS_DESCRIPTION, SHOOTS_TITLE } from "@hhs/constants/metadata";
+import { SHOOTS_META } from "@hhs/constants/metadata";
 import ShootsPageView from "@hhs/pages/shoots-page";
 import { Metadata } from "next";
 
@@ -7,10 +7,10 @@ export default function ShootsPage() {
 }
 
 export const metadata: Metadata = {
-  title: SHOOTS_TITLE,
-  description: SHOOTS_DESCRIPTION,
+  title: SHOOTS_META.title,
+  description: SHOOTS_META.description,
   openGraph: {
-    title: SHOOTS_TITLE,
-    description: SHOOTS_DESCRIPTION,
+    title: SHOOTS_META.title,
+    description: SHOOTS_META.description,
   },
 };

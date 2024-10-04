@@ -41,6 +41,11 @@ export const NAV_ITEMS = [
     href: "/",
   },
   {
+    label: "Manifesto",
+    device: ["mobile", "desktop"],
+    href: "/manifesto",
+  },
+  {
     label: "Shoots",
     device: ["mobile", "desktop"],
     href: "/shoots",

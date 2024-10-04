@@ -39,7 +39,7 @@ const Item = ({ info }: Item) => {
 
 const AnimatedBenefits = () => {
   return (
-    <div className="relative p-2 flex h-[300px] w-full flex-col overflow-hidden bg-background">
+    <div className="relative p-2 flex h-[288px] w-full flex-col overflow-hidden bg-background">
       <AnimatedList>
         {items.map((item, idx) => (
           <Item {...item} key={idx} />

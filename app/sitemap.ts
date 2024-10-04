@@ -1,15 +1,21 @@
-import { SITE_URL } from "@hhs/constants/metadata";
+import { SITE } from "@hhs/constants/metadata";
 
 export default async function sitemap() {
   return [
     {
-      url: SITE_URL,
+      url: SITE.url,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
     },
     {
-      url: `${SITE_URL}/shoots`,
+      url: `${SITE.url}/manifesto`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE.url}/shoots`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

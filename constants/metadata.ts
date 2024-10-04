@@ -1,9 +1,9 @@
-export const SITE_TITLE = "Happy Hacking Space";
-
-export const SITE_URL = "https://happyhackingspace.com";
-
-export const SITE_DESCRIPTION =
-  "Values exploration, curiosity, and empowerment. Rejects scarcity and believes in an abundant economy through collaboration and shared imagination.";
+export const SITE = {
+  title: "Happy Hacking Space",
+  url: "https://happyhacking.space",
+  description:
+    "Values exploration, curiosity, and empowerment. Rejects scarcity and believes in an abundant economy through collaboration and shared imagination.",
+};
 
 export const OG_IMAGE = {
   width: 1200,
@@ -30,7 +30,14 @@ export const SOCIALS = {
   },
 };
 
-export const SHOOTS_TITLE = "Shoots";
+export const SHOOTS_META = {
+  title: "Shoots",
+  description:
+    "A collection of photos taken by the Happy Hacking Space community.",
+};
 
-export const SHOOTS_DESCRIPTION =
-  "A collection of photos taken by the Happy Hacking Space community.";
+export const MANIFESTO_META = {
+  title: "Manifesto",
+  description:
+    "A declaration of the Happy Hacking Space community's values and principles.",
+};
