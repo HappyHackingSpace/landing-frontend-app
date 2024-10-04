@@ -1,5 +1,9 @@
 import { GradientHeading } from "@hhs/components/custom/gradient-heading";
-import { FAQ_ITEMS, MOTION_IMAGES } from "@hhs/constants/home";
+import {
+  FAQ_ITEMS,
+  HERO_DESCRIPTION,
+  MOTION_IMAGES,
+} from "@hhs/constants/home";
 import { SITE } from "@hhs/constants/metadata";
 import AccordionFaq from "@hhs/pages/home-page/components/accordion-faq";
 import AnimatedBenefits from "@hhs/pages/home-page/components/animated-benefits";
@@ -11,12 +15,7 @@ const HomePageView = () => {
       <section className="grid lg:grid-cols-2 gap-4 items-center">
         <div className="flex max-w-lg flex-col items-center text-center gap-2">
           <GradientHeading>{SITE.title}</GradientHeading>
-          <p className="block text-xl text-pretty">
-            A nonprofit community driven by curiosity and exploration, rejecting
-            the myth of scarcity, believing in an economy of abundance through
-            collaboration and mutual support, while championing collective
-            imagination and creative resilience.
-          </p>
+          <p className="block text-xl text-pretty">{HERO_DESCRIPTION}</p>
         </div>
         <AnimatedBenefits />
       </section>

@@ -21,7 +21,7 @@ const LandingHeader = () => {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-4 z-50 bg-background rounded-md  shadow-sm hover:shadow-none transition-colors duration-200 border">
+    <header className="sticky top-4 z-50 bg-background rounded-md shadow-sm hover:shadow-none transition-colors duration-200 border">
       {/* desktop */}
       <div className="justify-between items-center shrink-0 hidden md:flex px-2 h-12">
         <Link href="/">
@@ -52,7 +52,7 @@ const LandingHeader = () => {
                 <motion.span
                   layoutId="bubble"
                   initial={{ y: "calc(100%)" }}
-                  className="absolute inset-0 top-[calc(100%)] z-20 h-0.5 w-full rounded-full bg-gradient-to-r  from-transparent dark:via-indigo-500 via-indigo-600 to-transparent"
+                  className="absolute inset-0 top-[calc(100%)] z-20 h-[1px] w-full rounded-full bg-gradient-to-r from-transparent dark:via-indigo-500 via-indigo-600 to-transparent"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}

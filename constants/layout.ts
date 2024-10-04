@@ -48,3 +48,9 @@ export const NAV_ITEMS = [
     href: "/shoots",
   },
 ];
+
+export const FOOTER = {
+  description:
+    "Happy Hacking Space is a community of makers, creators, and developers who are passionate about building products and services that make the world a better place.",
+  copyRight: `© ${new Date().getFullYear()} HHS. All rights reserved.`,
+};
