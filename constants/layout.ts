@@ -37,17 +37,14 @@ export const SOCIAL_LINKS = [
 export const NAV_ITEMS = [
   {
     label: "Home",
-    device: ["mobile"],
     href: "/",
   },
   {
     label: "Manifesto",
-    device: ["mobile", "desktop"],
     href: "/manifesto",
   },
   {
     label: "Shoots",
-    device: ["mobile", "desktop"],
     href: "/shoots",
   },
 ];

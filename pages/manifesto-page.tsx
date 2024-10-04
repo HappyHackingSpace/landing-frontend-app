@@ -26,7 +26,7 @@ const ManifestoPageView = () => {
 
   return (
     <article className="relative">
-      <section className="relative max-w-3xl mx-auto space-y-6 z-50">
+      <section className="relative max-w-3xl mx-auto space-y-6 z-10">
         <GradientHeading size="lg" className="mb-4">
           Embracing Collaboration, Fueling Imagination
         </GradientHeading>
