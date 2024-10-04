@@ -17,7 +17,7 @@ import { Button } from "@hhs/components/shadcn/button";
 import { NAV_ITEMS } from "@hhs/constants/layout";
 import ThemeSwitcher from "@hhs/components/custom/theme-switcher";
 import Image from "next/image";
-import { SITE_TITLE } from "@hhs/constants/metadata";
+import { SITE } from "@hhs/constants/metadata";
 
 const LandingHeader = () => {
   return (
@@ -29,32 +29,23 @@ const LandingHeader = () => {
             src="/assets/hhs.avif"
             width={40}
             height={40}
-            alt={SITE_TITLE}
+            alt={SITE.title}
           />
         </Link>
-        <div className="flex items-center gap-12">
-          <NavigationMenu>
-            <NavigationMenuList>
-              {NAV_ITEMS.filter((item) => item.device.includes("desktop")).map(
-                (item) => (
-                  <Link
-                    key={item.label}
-                    legacyBehavior
-                    passHref
-                    href={item.href}
-                  >
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      {item.label}
-                    </NavigationMenuLink>
-                  </Link>
-                )
-              )}
-            </NavigationMenuList>
-          </NavigationMenu>
-          <ThemeSwitcher />
-        </div>
+        <NavigationMenu>
+          <NavigationMenuList>
+            {NAV_ITEMS.filter((item) => item.device.includes("desktop")).map(
+              (item) => (
+                <Link key={item.label} legacyBehavior passHref href={item.href}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    {item.label}
+                  </NavigationMenuLink>
+                </Link>
+              )
+            )}
+          </NavigationMenuList>
+        </NavigationMenu>
+        <ThemeSwitcher />
       </div>
 
       {/* mobile */}
@@ -73,7 +64,7 @@ const LandingHeader = () => {
                   src="/assets/hhs.avif"
                   width={24}
                   height={24}
-                  alt={SITE_TITLE}
+                  alt={SITE.title}
                 />
                 <span className="sr-only">HHS Community Logo</span>
                 <GradientHeading
@@ -82,7 +73,7 @@ const LandingHeader = () => {
                   size="xs"
                   className="text-center cursor-pointer"
                 >
-                  {SITE_TITLE}
+                  {SITE.title}
                 </GradientHeading>
               </div>
 

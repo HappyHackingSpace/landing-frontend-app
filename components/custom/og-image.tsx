@@ -1,4 +1,4 @@
-import { SITE_DESCRIPTION, SITE_TITLE } from "@hhs/constants/metadata";
+import { SITE } from "@hhs/constants/metadata";
 
 interface OpenGraphImageProps {
   title?: string;
@@ -79,7 +79,7 @@ function OpenGraphImage(props: OpenGraphImageProps) {
             fontWeight: 700,
           }}
         >
-          {title ?? SITE_TITLE}
+          {title ?? SITE.title}
         </span>
 
         <span
@@ -89,7 +89,7 @@ function OpenGraphImage(props: OpenGraphImageProps) {
             marginTop: "1rem",
           }}
         >
-          {description ?? SITE_DESCRIPTION}
+          {description ?? SITE.description}
         </span>
       </span>
     </div>

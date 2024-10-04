@@ -1,4 +1,4 @@
-import { SITE_URL } from "@hhs/constants/metadata";
+import { SITE } from "@hhs/constants/metadata";
 
 export default function robots() {
   return {
@@ -6,7 +6,7 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL,
+    sitemap: `${SITE.url}/sitemap.xml`,
+    host: SITE.url,
   };
 }

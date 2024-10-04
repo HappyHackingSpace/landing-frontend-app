@@ -8,7 +8,7 @@ import {
 } from "framer-motion";
 import { cn } from "@hhs/utils/cn";
 import Image from "next/image";
-import { SITE_TITLE } from "@hhs/constants/metadata";
+import { SITE } from "@hhs/constants/metadata";
 
 interface MotionImageProps extends HTMLMotionProps<"div"> {
   src: string;
@@ -30,7 +30,7 @@ const MotionImageCard = (props: MotionImageProps) => {
   const content = (
     <Image
       src={src}
-      alt={SITE_TITLE}
+      alt={SITE.title}
       className="relative h-full w-full object-cover aspect-square p-1 bg-background rounded-md"
       draggable={false}
       sizes="100vw"

@@ -1,10 +1,10 @@
 import { ImageResponse } from "next/og";
 
 import OpenGraphImage from "@hhs/components/custom/og-image";
-import { OG_IMAGE, SHOOTS_META, SITE } from "@hhs/constants/metadata";
+import { OG_IMAGE, MANIFESTO_META, SITE } from "@hhs/constants/metadata";
 import { getBoldFont, getRegularFont } from "@hhs/utils/fonts";
 
-export const alt = `${SHOOTS_META.title} - ${SITE.title}`;
+export const alt = `${MANIFESTO_META.title} - ${SITE.title}`;
 export const size = {
   width: OG_IMAGE.width,
   height: OG_IMAGE.height,
@@ -20,9 +20,9 @@ export default async function Image() {
   return new ImageResponse(
     (
       <OpenGraphImage
-        title={SHOOTS_META.title}
+        title={MANIFESTO_META.title}
         subtitle={SITE.title}
-        description={SHOOTS_META.description}
+        description={MANIFESTO_META.description}
         icon={
           <svg
             xmlns="http://www.w3.org/2000/svg"
