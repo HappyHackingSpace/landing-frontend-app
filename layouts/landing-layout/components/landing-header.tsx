@@ -32,29 +32,20 @@ const LandingHeader = () => {
             alt={SITE.title}
           />
         </Link>
-        <div className="flex items-center gap-12">
-          <NavigationMenu>
-            <NavigationMenuList>
-              {NAV_ITEMS.filter((item) => item.device.includes("desktop")).map(
-                (item) => (
-                  <Link
-                    key={item.label}
-                    legacyBehavior
-                    passHref
-                    href={item.href}
-                  >
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      {item.label}
-                    </NavigationMenuLink>
-                  </Link>
-                )
-              )}
-            </NavigationMenuList>
-          </NavigationMenu>
-          <ThemeSwitcher />
-        </div>
+        <NavigationMenu>
+          <NavigationMenuList>
+            {NAV_ITEMS.filter((item) => item.device.includes("desktop")).map(
+              (item) => (
+                <Link key={item.label} legacyBehavior passHref href={item.href}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    {item.label}
+                  </NavigationMenuLink>
+                </Link>
+              )
+            )}
+          </NavigationMenuList>
+        </NavigationMenu>
+        <ThemeSwitcher />
       </div>
 
       {/* mobile */}
