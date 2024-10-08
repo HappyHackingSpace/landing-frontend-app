@@ -34,21 +34,6 @@ export const SOCIAL_LINKS = [
   },
 ];
 
-export const NAV_ITEMS = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "Manifesto",
-    href: "/manifesto",
-  },
-  {
-    label: "Shoots",
-    href: "/shoots",
-  },
-];
-
 export const FOOTER = {
   description:
     "Happy Hacking Space is a community of makers, creators, and developers who are passionate about building products and services that make the world a better place.",

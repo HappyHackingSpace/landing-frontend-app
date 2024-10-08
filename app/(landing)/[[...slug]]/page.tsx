@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { allViews } from "@hhs/.content-collections/generated";
+import { allLandings } from "@hhs/.content-collections/generated";
 import Markdown from "@hhs/components/custom/mdx";
 
 interface ViewPageProps {
@@ -11,7 +11,7 @@ interface ViewPageProps {
 async function getViewFromParams(props: ViewPageProps) {
   const { params } = props;
   const slug = params.slug?.join("/") || "";
-  const view = allViews.find((view) => view.slugAsParams === slug);
+  const view = allLandings.find((view) => view.slugAsParams === slug);
   if (!view) {
     return null;
   }
@@ -22,7 +22,7 @@ async function getViewFromParams(props: ViewPageProps) {
 export async function generateStaticParams(): Promise<
   ViewPageProps["params"][]
 > {
-  return allViews.map((view) => ({
+  return allLandings.map((view) => ({
     slug: view.slugAsParams.split("/"),
   }));
 }
@@ -36,8 +36,8 @@ export default async function ViewPage(props: ViewPageProps) {
   }
 
   return (
-    <main className="p-4">
+    <div>
       <Markdown code={view.body.code} />
-    </main>
+    </div>
   );
 }

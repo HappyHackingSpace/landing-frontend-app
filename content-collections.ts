@@ -3,8 +3,8 @@ import { compileMDX } from "@content-collections/mdx";
 import { codeImport } from "remark-code-import";
 import remarkGfm from "remark-gfm";
 
-const views = defineCollection({
-  name: "views",
+const landing = defineCollection({
+  name: "landing",
   directory: "content",
   include: "**/*.mdx",
   schema: (z) => ({
@@ -31,5 +31,5 @@ const views = defineCollection({
 });
 
 export default defineConfig({
-  collections: [views],
+  collections: [landing],
 });
