@@ -4,9 +4,9 @@ import { ChildrenProps } from "@hhs/types/layout-props";
 
 const LandingLayoutView = ({ children }: ChildrenProps) => {
   return (
-    <div className="flex flex-col min-h-screen container p-4 md:p-8 lg:px-32 gap-8 md:gap-16">
+    <div className="flex flex-col min-h-screen max-w-4xl container mx-auto p-4 gap-8">
       <LandingHeader />
-      <main className="grow p-2">{children}</main>
+      <main className="grow p-4">{children}</main>
       <LandingFooter />
     </div>
   );
