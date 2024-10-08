@@ -1,6 +1,6 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { compileMDX } from "@content-collections/mdx";
-import { codeImport } from "remark-code-import";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
 const landing = defineCollection({
@@ -13,7 +13,8 @@ const landing = defineCollection({
   }),
   transform: async (document, context) => {
     const body = await compileMDX(context, document, {
-      remarkPlugins: [codeImport, remarkGfm],
+      rehypePlugins: [rehypeSlug],
+      remarkPlugins: [remarkGfm],
     });
     return {
       ...document,
