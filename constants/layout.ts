@@ -5,6 +5,7 @@ import {
   Linkedin,
   MonitorSmartphone,
   Moon,
+  Newspaper,
   Sun,
   Twitter,
 } from "lucide-react";
@@ -46,6 +47,10 @@ export const SOCIAL_LINKS = [
   {
     icon: Github,
     href: "https://github.com/HappyHackingSpace",
+  },
+  {
+    icon: Newspaper,
+    href: "https://medium.com/happy-hacking-space",
   },
 ];
 
