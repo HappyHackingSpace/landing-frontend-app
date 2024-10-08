@@ -15,7 +15,7 @@ export default async function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${SITE.url}/shoots`,
+      url: `${SITE.url}/contact`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

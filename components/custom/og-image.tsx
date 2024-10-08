@@ -1,3 +1,4 @@
+import * as React from "react";
 import { SITE } from "@hhs/constants/metadata";
 
 interface OpenGraphImageProps {
@@ -9,8 +10,12 @@ interface OpenGraphImageProps {
   page?: string;
 }
 
-function OpenGraphImage(props: OpenGraphImageProps) {
-  const { title, description, icon, subtitle } = props;
+const OpenGraphImage: React.FC<OpenGraphImageProps> = ({
+  title,
+  subtitle,
+  description,
+  icon,
+}) => {
   return (
     <div
       style={{
@@ -94,6 +99,6 @@ function OpenGraphImage(props: OpenGraphImageProps) {
       </span>
     </div>
   );
-}
+};
 
 export default OpenGraphImage;

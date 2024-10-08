@@ -5,6 +5,7 @@ import {
   Linkedin,
   MonitorSmartphone,
   Moon,
+  Newspaper,
   Sun,
   Twitter,
 } from "lucide-react";
@@ -13,6 +14,21 @@ export const THEME_OPTIONS: ThemeOptionProps[] = [
   { theme: "light", icon: Sun },
   { theme: "dark", icon: Moon },
   { theme: "system", icon: MonitorSmartphone },
+];
+
+export const NAV_ITEMS = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "Manifesto",
+    href: "/manifesto",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
 ];
 
 export const SOCIAL_LINKS = [
@@ -32,20 +48,9 @@ export const SOCIAL_LINKS = [
     icon: Github,
     href: "https://github.com/HappyHackingSpace",
   },
-];
-
-export const NAV_ITEMS = [
   {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "Manifesto",
-    href: "/manifesto",
-  },
-  {
-    label: "Shoots",
-    href: "/shoots",
+    icon: Newspaper,
+    href: "https://medium.com/happy-hacking-space",
   },
 ];
 

@@ -30,12 +30,6 @@ export const SOCIALS = {
   },
 };
 
-export const SHOOTS_META = {
-  title: "Shoots",
-  description:
-    "A collection of photos taken by the Happy Hacking Space community.",
-};
-
 export const MANIFESTO_META = {
   title: "Manifesto",
   description:

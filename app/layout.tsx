@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { geistMono, geistSans } from "@hhs/assets/fonts";
 import ThemeProvider from "@hhs/providers/theme-provider";
-
-import "@hhs/assets/styles/globals.css";
-import { ChildrenProps } from "@hhs/types/layout-props";
 import { SITE, SOCIALS } from "@hhs/constants/metadata";
+import { ChildrenProps } from "@hhs/types/layout-props";
+import "@hhs/assets/styles/globals.css";
 
 export default function RootLayout({ children }: ChildrenProps) {
   return (

@@ -1,9 +1,10 @@
 "use client";
 
+import { FC } from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
 
-const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
+const ThemeProvider: FC<ThemeProviderProps> = ({ children, ...props }) => {
   return (
     <NextThemesProvider
       attribute="class"
