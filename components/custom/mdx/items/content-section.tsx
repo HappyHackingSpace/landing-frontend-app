@@ -1,12 +1,8 @@
-import clsx from "clsx";
-import { ReactNode } from "react";
+import { cn } from "@hhs/utils/cn";
 
-type Props = {
-  children: ReactNode;
-};
-const ContentSection = ({ children }: Props) => (
+const ContentSection = ({ children }: ChildrenProps) => (
   <section
-    className={clsx(
+    className={cn(
       "prose prose-base dark:prose-invert",
       "prose-code:rounded prose-code:border prose-code:px-0.5 prose-code:font-normal prose-code:before:content-none prose-code:after:content-none",
       "prose-code:border-base-300 prose-code:bg-base-100 prose-code:text-base-700",

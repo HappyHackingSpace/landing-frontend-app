@@ -50,7 +50,7 @@ const LandingHeader = () => {
                   <motion.div
                     layoutId="landing-header-nav"
                     initial={{ y: "calc(100%)" }}
-                    className="absolute inset-0 top-[calc(100%)] z-20 h-[1px] w-full bg-orange-500"
+                    className="absolute inset-0 top-[calc(100%)] z-20 h-[1px] w-full bg-primary"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}

@@ -1,6 +1,5 @@
 import LandingFooter from "./components/landing-footer";
 import LandingHeader from "./components/landing-header";
-import { ChildrenProps } from "@hhs/types/layout-props";
 
 const LandingLayoutView = ({ children }: ChildrenProps) => {
   return (
