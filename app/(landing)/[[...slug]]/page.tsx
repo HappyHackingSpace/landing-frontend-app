@@ -35,9 +35,5 @@ export default async function ViewPage(props: ViewPageProps) {
     notFound();
   }
 
-  return (
-    <div>
-      <Markdown code={view.body.code} />
-    </div>
-  );
+  return <Markdown code={view.body.code} />;
 }

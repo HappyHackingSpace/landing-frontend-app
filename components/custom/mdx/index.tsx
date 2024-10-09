@@ -5,7 +5,6 @@ import { Hash } from "lucide-react";
 import { ReactNode } from "react";
 import ContentSection from "./items/content-section";
 import MarkdownImage from "./items/markdown-image";
-
 type Props = {
   code: string;
 };
@@ -22,12 +21,13 @@ const heading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
       className="group relative no-underline focus-visible:ring-0"
     >
       <Hash
-        className="absolute -left-5 hidden h-full p-1 text-primary group-hover:block group-focus-visible:block sm:-left-6 "
+        className="absolute -left-5 hidden h-full text-primary group-hover:block group-focus-visible:block sm:-left-6 "
         strokeWidth="3"
+        size={16}
       />
       <As
         id={id}
-        className="group-focus-visible:underline group-focus-visible:decoration-primary-500 group-focus-visible:decoration-2 border border-dashed border-primary p-1"
+        className="group-focus-visible:underline group-focus-visible:decoration-primary-500 group-focus-visible:decoration-2"
       >
         {children}
       </As>
