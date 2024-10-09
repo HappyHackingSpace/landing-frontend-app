@@ -1,19 +1,7 @@
-import { ThemeOptionProps } from "@hhs/types/layout-props";
-import {
-  Github,
-  Instagram,
-  Linkedin,
-  MonitorSmartphone,
-  Moon,
-  Newspaper,
-  Sun,
-  Twitter,
-} from "lucide-react";
-
-export const THEME_OPTIONS: ThemeOptionProps[] = [
-  { theme: "light", icon: Sun },
-  { theme: "dark", icon: Moon },
-  { theme: "system", icon: MonitorSmartphone },
+export const THEME_OPTIONS = [
+  { theme: "light" },
+  { theme: "dark" },
+  { theme: "system" },
 ];
 
 export const NAV_ITEMS = [
@@ -33,23 +21,28 @@ export const NAV_ITEMS = [
 
 export const SOCIAL_LINKS = [
   {
-    icon: Twitter,
+    icon: "X",
+    tooltip: "X/Twitter",
     href: "https://x.com/happyhackings",
   },
   {
-    icon: Instagram,
+    icon: "I",
+    tooltip: "Instagram",
     href: "https://instagram.com/happyhackingspace",
   },
   {
-    icon: Linkedin,
+    icon: "L",
+    tooltip: "LinkedIn",
     href: "https://linkedin.com/company/happy-hacking-space",
   },
   {
-    icon: Github,
+    icon: "G",
+    tooltip: "GitHub",
     href: "https://github.com/HappyHackingSpace",
   },
   {
-    icon: Newspaper,
+    icon: "M",
+    tooltip: "Medium",
     href: "https://medium.com/happy-hacking-space",
   },
 ];
