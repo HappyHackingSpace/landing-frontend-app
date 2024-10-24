@@ -21,7 +21,7 @@ const heading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
       className="group relative no-underline focus-visible:ring-0"
     >
       <Hash
-        className="absolute -left-5 hidden h-full text-primary group-hover:block group-focus-visible:block sm:-left-6 "
+        className="absolute -left-5 hidden h-full text-primary hidden md:group-hover:block group-focus-visible:block sm:-left-6 "
         strokeWidth="3"
         size={16}
       />
