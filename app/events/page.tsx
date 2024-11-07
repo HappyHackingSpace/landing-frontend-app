@@ -47,7 +47,6 @@ const EventsPage: React.FC = () => {
   return (
     <LandingLayoutView>
       <Subtitle>List of our events</Subtitle>
-
       <Tabs defaultValue="upcoming" className="w-full">
         <TabsList>
           <TabsTrigger
@@ -104,7 +103,7 @@ const EventsPage: React.FC = () => {
           ))}
         </TabsContent>
       </Tabs>
-
+      
       {totalPages > 1 && (
         <div className="flex justify-between mt-4">
           <Button
