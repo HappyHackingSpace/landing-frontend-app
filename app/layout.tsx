@@ -5,7 +5,6 @@ import { SITE } from "@hhs/constants/metadata";
 import "@hhs/assets/styles/globals.css";
 import ServiceWorkerRegister from "@hhs/components/custom/ServiceWorkerRegister";
 import { metadata } from "./metadata";
-import Ical from "@hhs/components/custom/ical";
 
 export { metadata };
 
@@ -16,7 +15,6 @@ export default function RootLayout({ children }: ChildrenProps) {
         <ThemeProvider>
           <ServiceWorkerRegister />
           {children}
-          <Ical className="fixed w-15 h-15 bottom-10"/>
         </ThemeProvider>
       </body>
     </html>
