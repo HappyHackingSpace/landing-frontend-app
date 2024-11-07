@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useParams, notFound } from "next/navigation";
 import Subtitle from "@hhs/components/custom/subtitle";
 import { Loader } from "@hhs/components/custom/loader";
-
+import DOMPurify from "dompurify";
 
 const EventDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -46,7 +46,7 @@ const EventDetailPage = () => {
         {event.venue && (
           <div
             dangerouslySetInnerHTML={{
-              __html: `${event.detail} Coordinates: <a href="https://www.google.com/maps/place/${event.venue.lat},${event.venue.lng}" target="_blank" alt="${event.name}">${event.venue.lat}, ${event.venue.lng}</a>`,
+              __html: DOMPurify.sanitize(`${event.detail} Coordinates: <a href="https://www.google.com/maps/place/${event.venue.lat},${event.venue.lng}" target="_blank" alt="${event.name}">${event.venue.lat}, ${event.venue.lng}</a>`),
             }}
           />
         )}
