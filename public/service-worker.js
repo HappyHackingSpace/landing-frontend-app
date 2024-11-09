@@ -13,41 +13,57 @@ const URLS_TO_CACHE = [
   '/contact',
   '/history'
 ];
+const CACHE_LIFETIME = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+function setCacheTimestamp() {
+  localStorage.setItem('cache-timestamp', Date.now());
+}
+
+function isCacheExpired() {
+  const cachedTime = localStorage.getItem('cache-timestamp');
+  return !cachedTime || (Date.now() - cachedTime) > CACHE_LIFETIME;
+}
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(URLS_TO_CACHE);
+      return cache.addAll(URLS_TO_CACHE).then(() => {
+        setCacheTimestamp();
+      });
     })
   );
 });
 
 self.addEventListener('fetch', (event) => {
-  // only cache here
+  if (isCacheExpired()) {
+    caches.delete(CACHE_NAME).then(() => {
+      caches.open(CACHE_NAME).then((cache) => {
+        cache.addAll(URLS_TO_CACHE);
+        setCacheTimestamp();
+      });
+    });
+  }
+
   if (event.request.mode === 'navigate' || event.request.method === 'GET') {
     event.respondWith(
       caches.match(event.request).then((response) => {
-
         if (response) {
           return response;
         }
-        // new request, fetch from network
         return fetch(event.request).then((networkResponse) => {
-
           return caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, networkResponse.clone());
+            setCacheTimestamp(); // Update cache timestamp
             return networkResponse;
           });
         });
       }).catch(() => {
-        // requests when offline
         if (event.request.mode === 'navigate') {
           return caches.match('/');
         }
       })
     );
   } else {
-    // return cached version or fetch from network
     event.respondWith(
       caches.match(event.request).then((response) => {
         return response || fetch(event.request);
@@ -56,7 +72,8 @@ self.addEventListener('fetch', (event) => {
   }
 });
 
-// Clean up old caches
+
+// Delete outdated caches
 self.addEventListener('activate', (event) => {
   const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
