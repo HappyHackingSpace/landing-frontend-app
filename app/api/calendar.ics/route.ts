@@ -22,8 +22,10 @@ interface EventData {
 export async function GET(req: Request): Promise<Response> {
   try {
 
-    const data = await getAllEvents('past');
-    const events: EventData[] = data ? data.data : [];
+    const past = await getAllEvents('past');
+    const upcoming = await getAllEvents('upcoming');
+    const data = [...past.data, ...upcoming.data];
+    const events: EventData[] = data as EventData[];
 
     const calendar = IcalCalendar({
       prodId: { company: 'HappyHackingSpace', product: 'HHS', language: 'EN' },
