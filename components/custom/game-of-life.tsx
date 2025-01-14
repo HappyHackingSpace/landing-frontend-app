@@ -22,6 +22,7 @@ const patterns = {
 const GameOfLife = () => {
   const cellSize = 21;
   const initialSpeed = 100;
+  const colorPalette = ['#0e4429', '#006d32', '#26a641', '#39d353'];
   const [worldDimensions, setWorldDimensions] = React.useState<WorldDimensions>(
     { height: 0, width: 0 }
   );
@@ -100,7 +101,7 @@ const GameOfLife = () => {
         Object.keys(livingCells).forEach((key) => {
           const [x, y] = key.split("-").map(Number);
           if (livingCells[key]) {
-            ctx.fillStyle = "green";
+            ctx.fillStyle = colorPalette[Math.floor(Math.random() * colorPalette.length)];
             ctx.fillRect(
               x * cellSize,
               y * cellSize,
