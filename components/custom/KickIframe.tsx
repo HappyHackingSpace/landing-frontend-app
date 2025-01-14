@@ -2,8 +2,10 @@
 
 import * as React from "react";
 import { Button } from "../shadcn/button";
+import { usePathname } from "next/navigation";
 
 const KickIframe: React.FC = () => {
+  const pathname = usePathname();
   const [isIframeVisible, setIframeVisibility] = React.useState(false);
   const [isIframeAvailable, setIframeAvailability] = React.useState(false);
 
@@ -26,6 +28,8 @@ const KickIframe: React.FC = () => {
   const toggleIframeVisibility = React.useCallback(() => {
     setIframeVisibility((prev) => !prev);
   }, []);
+
+  if (pathname === "/live") return null;
 
   return (
     <div className="h-full w-full">
