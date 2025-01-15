@@ -1,4 +1,6 @@
 # Happy Hacking Space - Website Code
+![image](https://github.com/user-attachments/assets/9ca41245-8137-4f4b-ac2c-4a55ac22159b)
+
 
 Welcome to the website for Happy Hacking Space, a community-driven platform that brings together technology enthusiasts, creators, and innovators.
 
