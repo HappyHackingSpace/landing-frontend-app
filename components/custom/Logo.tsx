@@ -23,7 +23,7 @@ const Logo = () => {
 
 const SVG = ({ fill }: { fill: string }) => {
   return <svg width="126" height="60" viewBox="0 0 1050 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="14" y="14" width="1022" height="472" stroke={fill} stroke-width="28" />
+    <rect x="14" y="14" width="1022" height="472" stroke={fill} strokeWidth="28" />
     <circle cx="393" cy="250" r="50" fill={fill} />
     <circle cx="256" cy="388" r="50" fill={fill} />
     <circle cx="393" cy="388" r="50" fill={fill} />

@@ -64,3 +64,53 @@
     @apply font-mono text-base antialiased tracking-[.05em] bg-background text-foreground h-full;
   }
 }
+
+
+.prose :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *)) > code {
+  border-color: transparent !important;
+}
+
+/* .prose :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *))  */
+
+.prose :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  @apply bg-card rounded-none border border-border p-4;
+  position: relative;
+  background-color: hsl(113.85deg 40.71% 8.39%) !important;
+  margin: 1.5em 0;
+  counter-reset: line;
+}
+
+.prose pre {
+  overflow-x: auto;
+  font-feature-settings: normal;
+  line-height: 1.6;
+}
+
+.prose pre code {
+  @apply bg-transparent text-sm;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-weight: 400;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  display: block;
+}
+
+.prose pre code > span {
+  display: block;
+  position: relative;
+  padding-left: 3em;
+}
+
+.prose pre code > span:before {
+  counter-increment: line;
+  content: counter(line);
+  position: absolute;
+  left: 0;
+  padding: 0 1em;
+  color: var(--muted-foreground);
+  user-select: none;
+}
