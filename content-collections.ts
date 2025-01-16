@@ -32,6 +32,38 @@ const landing = defineCollection({
   },
 });
 
+const blog = defineCollection({
+  name: "blog",
+  directory: "content/blog",
+  include: "**/*.mdx",
+  schema: (z) => ({
+    title: z.string(),
+    subtitle: z.string(),
+    summary: z.string(),
+    publishedAt: z.string(),
+    author: z.string(),
+    tags: z.array(z.string()).optional(),
+  }),
+  transform: async (document, context) => {
+    const body = await compileMDX(context, document, {
+      rehypePlugins: [rehypeSlug],
+      remarkPlugins: [remarkGfm],
+    });
+    return {
+      ...document,
+      image: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURI(
+        document.title
+      )}`,
+      slug: `/blog/${document._meta.path}`,
+      slugAsParams: document._meta.path.split("/").join("/"),
+      body: {
+        raw: document.content,
+        code: body,
+      },
+    };
+  },
+});
+
 export default defineConfig({
-  collections: [landing],
+  collections: [landing, blog],
 });

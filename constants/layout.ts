@@ -57,6 +57,10 @@ export const NAV_ITEMS = [
       },
     ],
   },
+  {
+    label: "Blog",
+    href: "/blog",
+  },
 ];
 
 export const FOOTER_ITEMS = [
