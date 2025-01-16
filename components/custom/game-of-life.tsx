@@ -22,6 +22,7 @@ const patterns = {
 const GameOfLife = () => {
   const cellSize = 21;
   const initialSpeed = 100;
+  const colorPalette = ['#0e4429', '#006d32', '#26a641', '#39d353'];
   const [worldDimensions, setWorldDimensions] = React.useState<WorldDimensions>(
     { height: 0, width: 0 }
   );
@@ -100,7 +101,7 @@ const GameOfLife = () => {
         Object.keys(livingCells).forEach((key) => {
           const [x, y] = key.split("-").map(Number);
           if (livingCells[key]) {
-            ctx.fillStyle = "green";
+            ctx.fillStyle = colorPalette[Math.floor(Math.random() * colorPalette.length)];
             ctx.fillRect(
               x * cellSize,
               y * cellSize,
@@ -188,7 +189,7 @@ const GameOfLife = () => {
         ref={canvasRef}
         width={worldDimensions.width}
         height={worldDimensions.height}
-        className="absolute -z-50 opacity-20"
+        className="absolute top-0 left-0 w-full h-[calc(100vh-100px)] -z-50 opacity-20"
       />
       <div className="controls-container mt-4 right-0 bottom-5 p-4 absolute opacity-20 group hidden md:block">
         <div className="options-icon group-hover:hidden">

@@ -3,6 +3,7 @@ import { MDXContent } from "@content-collections/mdx/react";
 import * as React from "react";
 import ContentSection from "./items/content-section";
 import MarkdownImage from "./items/markdown-image";
+import { ProjectCard, ProjectGrid, Collapse } from "../projects";
 
 interface HeadingProps extends React.PropsWithChildren {
   id?: string;
@@ -43,6 +44,9 @@ const Markdown = ({ code }: MarkdownProps) => {
           h4: heading("h4"),
           h5: heading("h5"),
           h6: heading("h6"),
+          ProjectCard,
+          ProjectGrid,
+          Collapse,
         }}
       />
     </ContentSection>

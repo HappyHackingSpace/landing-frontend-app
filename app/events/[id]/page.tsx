@@ -36,12 +36,14 @@ const EventDetailPage = () => {
   return (
     <LandingLayoutView>
       <Subtitle>Event: {event.name}</Subtitle>
-      <Image
-        src={event.highlight_photo}
-        alt={event.name}
-        width={800}
-        height={400}
-      />
+      {event.highlight_photo && (
+        <Image
+          src={event.highlight_photo}
+          alt={event.name}
+          width={800}
+          height={400}
+        />
+      )}
       <div className="flex space-x-4 mb-8 mt-4">
         {event.venue && (
           <div

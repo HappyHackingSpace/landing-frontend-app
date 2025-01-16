@@ -7,6 +7,7 @@ const URLS_TO_CACHE = [
   '/assets/hhs-black.avif',
   '/assets/hhs-white.avif',
   '/assets/hhs.avif',
+  '/philosophy',
   '/manifesto',
   '/team',
   '/events',

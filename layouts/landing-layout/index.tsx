@@ -1,6 +1,7 @@
 import Background from "./components/background";
 import LandingFooter from "./components/landing-footer";
 import LandingHeader from "./components/landing-header";
+import KickIframe from "@hhs/components/custom/KickIframe";
 
 const LandingLayoutView = ({ children }: ChildrenProps) => {
   return (
@@ -11,6 +12,7 @@ const LandingLayoutView = ({ children }: ChildrenProps) => {
       <main className="grow p-4">{children}</main>
       <LandingFooter />
     </div>
+    <KickIframe/>
     </>
   );
 };

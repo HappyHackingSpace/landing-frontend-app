@@ -19,7 +19,7 @@ interface EventData {
   venue: Venue;
 }
 
-export async function GET(req: Request): Promise<Response> {
+export async function GET(): Promise<Response> {
   try {
 
     const past = await getAllEvents('past');
@@ -28,18 +28,22 @@ export async function GET(req: Request): Promise<Response> {
     const events: EventData[] = data as EventData[];
 
     const calendar = IcalCalendar({
-      prodId: { company: 'HappyHackingSpace', product: 'HHS', language: 'EN' },
+      prodId: { company: 'space.happyhacking', product: 'HHS', language: 'EN' },
       timezone: 'UTC',
+      name: 'HHS Events'
     });
 
     // Add all events to calendar
     events.forEach((event) => {
+      const location = event.venue
+        ? `${event.venue.name || ''}, ${event.venue.address || ''}`.trim()
+        : 'Online';
       calendar.createEvent({
         start: new Date(event.start_date.date),
         end: new Date(event.end_date.date),
         summary: event.name,
         description: event.detail.replace(/<[^>]*>?/gm, ''),
-        location: `${event.venue.name}, ${event.venue.address}`,
+        location: location,
         status: ICalEventStatus.CONFIRMED,
         alarms: [
           {

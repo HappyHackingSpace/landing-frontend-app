@@ -38,6 +38,9 @@ export const metadata: Metadata = {
       site: `@${SOCIALS.twitter.username}`,
       creator: `@${SOCIALS.twitter.username}`,
     },
+    icons: {
+      icon: "/favicon.ico"
+    },
     other: {
       pinterest: "nopin",
     },
