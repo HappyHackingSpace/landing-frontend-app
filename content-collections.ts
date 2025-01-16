@@ -17,13 +17,19 @@ const landing = defineCollection({
       rehypePlugins: [rehypeSlug],
       remarkPlugins: [remarkGfm],
     });
+
+    // handling index.mdx
+    const isIndex = document._meta.fileName === "index.mdx";
+    const pathSegments = document._meta.path.split(/[/\\]/).slice(1);
+    const slugAsParams = isIndex && pathSegments.length === 1 ? "" : pathSegments.join("/");
+
     return {
       ...document,
       image: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURI(
         document.title
       )}`,
       slug: `/${document._meta.path}`,
-      slugAsParams: document._meta.path.split("/").slice(1).join("/"),
+      slugAsParams,
       body: {
         raw: document.content,
         code: body,

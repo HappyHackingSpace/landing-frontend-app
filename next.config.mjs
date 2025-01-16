@@ -2,18 +2,11 @@ import { withContentCollections } from "@content-collections/next";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  removeConsole: {
-    exclude: ["error", "info"],
-  },
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   trailingSlash: false,
   images: {
     deviceSizes: [360, 435, 768, 1024, 1280],
     formats: ["image/avif"],
-  },
-  experimental: {
-    webVitalsAttribution: ["FCP", "LCP", "CLS", "FID", "TTFB", "INP"],
-  },
-  images: {
     remotePatterns: [
       {
         protocol: 'https',
@@ -22,6 +15,22 @@ const nextConfig = {
         pathname: '/**/*',
       },
     ],
+  },
+  experimental: {
+    webVitalsAttribution: ["FCP", "LCP", "CLS", "FID", "TTFB", "INP"],
+  },
+  async headers() {
+    return [
+      {
+        source: '/service-worker.js',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+        ],
+      },
+    ];
   },
 };
 
