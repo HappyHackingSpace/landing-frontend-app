@@ -14,6 +14,52 @@ In our community, hacking represents the spirit of playful intelligence and expl
 
 > Defining hacking can be challenging due to its variable nature. However, a common trait among many hackers is their playful, intelligent, and exploratory mindset. Thus, hacking means exploring the boundaries of what is possible with a playful spirit. Activities that demonstrate playful intelligence have hack value.
 
+# Adding a New Article to the App
+Follow these steps to add a new article to the app. This guide explains the structure of the markdown file and provides a template.
+
+## Article Template
+
+Save your article as a markdown (`.mdx`) file. Below is the required template:
+
+mdx file location: `content/blog/your_post_title.mdx`<br>
+blog image location: `public/blog/your_post_img.jpg`
+
+```markdown
+---
+title: "Your Post Title"                 # The title of your article
+subtitle: "Your Post Subtitle"           # Optional subtitle
+summary: "A brief summary of your post"  # Short summary for previews
+publishedAt: "YYYY-MM-DD"                # Date of publication
+author: "Author Name"                    # Name of the author
+tags: ["tag1", "tag2"]                   # Relevant tags for the post
+---
+
+## Your Post Title
+
+Write the content of your post here. You can use Markdown syntax for formatting.
+
+### Example Code Block
+
+To include code snippets, use fenced code blocks:
+
+```Javascript
+console.log("This is a test post");
+const test = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    console.log("This is a test post");
+};
+
+test();
+
+Adding an image
+<img
+  src="/blog/your_post_img.jpg" 
+  alt="A description of your image" 
+  style={{ width: "50%" }}
+/>
+```
+
+
 ## Technical Stack
 
 This is a modern web application built with:
