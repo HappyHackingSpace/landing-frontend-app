@@ -5,7 +5,7 @@ import Subtitle from "@hhs/components/custom/subtitle";
 
 const BlogPage = () => {
   const sortedPosts = allBlogs.sort(
-    (a, b) => 
+    (a, b) =>
       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
 
@@ -28,12 +28,14 @@ const BlogPage = () => {
               {post.tags && (
                 <div className="mt-4 flex gap-2 flex-wrap">
                   {post.tags.map((tag) => (
-                    <span
+                    // set tags to be links to the tag page
+                    <Link
                       key={tag}
-                      className="px-2 py-1 bg-primary/10 text-primary text-sm rounded-full"
+                      href={`/blog/tag/${encodeURIComponent(tag)}`}
+                      className="px-2 py-1 bg-primary/10 text-primary text-sm rounded-full hover:bg-primary/20 transition-colors"
                     >
                       {tag}
-                    </span>
+                    </Link>
                   ))}
                 </div>
               )}
