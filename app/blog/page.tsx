@@ -14,36 +14,41 @@ const BlogPage = () => {
       <Subtitle>Blog Posts</Subtitle>
       <div className="space-y-8">
         {sortedPosts.map((post, index) => (
-          <Link key={index} href={post.slug} className="block">
-            <article className="group hover:bg-accent dark:hover:bg-zinc-900 p-4 rounded-lg transition-all">
-              <h2 className="text-xl font-semibold group-hover:text-primary">
-                {post.title}
-              </h2>
-              <div className="mt-2 text-sm text-muted-foreground">
-                <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
-                <span className="mx-2">•</span>
-                <span>{post.author}</span>
-              </div>
-              <p className="mt-2 text-muted-foreground">{post.summary}</p>
-              {post.tags && (
-                <div className="mt-4 flex gap-2 flex-wrap">
-                  {post.tags.map((tag) => (
-                    <Link
-                      key={tag}
-                      href={`/blog/tag/${encodeURIComponent(tag)}`}
-                      className="px-2 py-1 bg-primary/10 text-primary text-sm rounded-full hover:bg-primary/20 transition-colors"
-                    >
-                      {tag}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </article>
+          <Link key={index} href={post.slug} className="block" legacyBehavior>
+              <article className="group dark:hover:bg-green-900 hover:bg-gray-100 p-4 rounded-lg transition-all">
+                <Link key={index} href={post.slug} className="block" legacyBehavior>
+                  <a>
+                    <h2 className="text-xl font-semibold dark:group-hover:text-white">
+                      {post.title}
+                    </h2>
+                    <div className="mt-2 text-sm text-white-foreground">
+                      <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+                      <span className="mx-2">•</span>
+                      <span>{post.author}</span>
+                    </div>
+                    <p className="mt-2 text-muted-foreground">{post.summary}</p>
+                  </a>
+                </Link>
+                {post.tags && (
+                  <div className="mt-4 flex gap-2 flex-wrap">
+                    {post.tags.map((tag) => (
+                      <Link
+                        key={tag}
+                        href={`/blog/tag/${encodeURIComponent(tag)}`}
+                        className="px-2 py-1 bg-primary/10 text-dark text-sm rounded-full hover:bg-primary/20 dark:bg-white/10 dark:text-white transition-colors"
+                      >
+                        {tag}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </article>
           </Link>
+
         ))}
       </div>
     </LandingLayoutView>
   );
 };
 
-export default BlogPage;
+export default BlogPage; 
