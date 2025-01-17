@@ -1,0 +1,230 @@
+---
+title: "Transition from Machine Learning to Deep Learning"                 # The title of your article
+subtitle: ""           # Optional subtitle
+summary: "Transition from Machine Learning to Deep Learning: Advantages and Impact of Automatic Feature Extraction"  # Short summary for previews
+publishedAt: "2025-01-17"                # Date of publication
+author: "Muhammed Sen"                    # Name of the author
+tags: ["Deep Learning", "Machine Learning"]                   # Relevant tags for the post
+---
+
+## Abstract
+
+This text discusses the automatic feature extraction approach in deep learning, focusing on its fundamental principles and advantages. It explains the relationships among artificial intelligence (AI), machine learning (ML), and deep learning (DL), followed by an examination of the structure and functions of artificial neural networks. It emphasizes how neural network architectures used in deep learning operate more automatically and effectively compared to manual feature extraction in traditional machine learning. The superior performance of automatic feature extraction in complex data types such as images, text, and time series is highlighted. Finally, the contribution of the flexibility and customizable architectures of deep learning models to solving complex problems is evaluated. This text aims to demonstrate the importance of deep learning in modern AI applications and its transformative effect on feature extraction.
+
+## Keywords
+
+- Deep Learning  
+- Automatic Feature Extraction  
+- Artificial Neural Networks  
+- Machine Learning
+
+## 1. Introduction
+
+To fully understand the automatic feature learning approach in deep learning, one must first grasp what deep learning entails. Thinking more broadly, it is also essential to consider the concepts of artificial intelligence (AI) and machine learning (ML), as well as the emergence of deep learning. A thorough understanding of these foundational concepts is crucial for appreciating the principles of automatic feature learning, its development, and the advantages it offers when constructing models.
+
+## 1.1. What Is Artificial Intelligence?
+
+A book published in 1990 defines artificial intelligence (AI) as follows:  
+AI is a technology that attempts to imitate human intelligence and perform various tasks through human-made machines. However, to truly understand AI, it is important to first define “intelligence,” which encompasses abilities such as learning from experience, solving problems, and adapting quickly to new situations. The term “artificial” emphasizes that this intelligence does not arise from natural evolutionary processes or biological influences but is instead created through human design.
+
+Thus, while artificial intelligence mimics abilities similar to natural intelligence, it does not rely on a biological foundation [1]. Building on this definition, the goal of AI is to analyze information gathered from experience to draw accurate conclusions.  
+
+To illustrate this, consider how a baby learns. Babies are not born with the ability to speak; instead, they develop language skills over time by learning from and repeating information from their environment. This process is achieved through learning and interpretation. Similarly, AI demonstrates “intelligence” by learning from previous experiences and analyzing data to perform tasks effectively.
+
+## 1.2. What Is Machine Learning?
+
+A book published in 2015 provides a concise explanation of machine learning:  
+Machine learning is a process that enables algorithms to improve their performance on specific tasks by training them with input data. Instead of following fixed programming, algorithms optimize themselves as they gain experience from data and produce increasingly accurate results when applied to new data [2].
+
+To clarify the connection between machine learning and artificial intelligence: Machine learning is a subfield of AI and a critical technique for achieving AI’s goals. AI seeks to replicate human-like intelligence and learning processes, while machine learning serves as a method to accomplish this objective.  
+
+In machine learning, algorithms improve their performance by learning from data in a way that resembles human learning. Similar to how humans gain experience over time, machine learning algorithms “learn” by being exposed to new data and adapting accordingly.  
+
+This learning capability directly aligns with AI’s aim to develop systems that grow smarter over time and make increasingly accurate predictions based on the data they receive. In summary, machine learning is the primary mechanism through which AI mimics real intelligence and learning capabilities. Like humans, machine learning algorithms continuously adapt and optimize their performance when faced with new situations.
+
+## 1.3. What Is Deep Learning?
+
+A paper defining deep learning provides the following explanation:  
+“Deep learning is a branch of machine learning that attempts to model high-level abstractions in data by using multiple layers of neural networks composed of complex structures or non-linear transformations. [3]”  
+
+While this definition may initially seem complex, it can be simplified: deep learning is a framework that allows computers to simulate human-like thinking processes. It enables computers to learn autonomously from large datasets and perform various tasks.
+
+<img
+  src="/blog/Transition_from_Machine_Learning_to_Deep_Learning1.jpg" 
+  alt="A description of your image" 
+  style={{ width: "50%" }}
+/>
+*Figure 1. An illustration of how deep learning processes data through multiple layers*
+
+
+To provide an example, imagine presenting a computer with a large set of photographs, some depicting women and others depicting men. Initially, the computer has no understanding of the data. However, as it processes more images, it begins to distinguish between women and men. Using deep learning, the computer analyzes each photograph and learns to classify them accurately—for instance, labeling them as "woman" or "man." With exposure to an increasing amount of data, the computer’s predictions improve.
+
+As demonstrated in this example, the photographs supplied to the computer provide it with the necessary experience to learn and interpret scenarios it has not encountered before. In practice, however, this process is significantly more intricate. Deep learning allows computers to first learn simple features, such as edges and colors, and subsequently recognize more complex structures, such as objects or abstract concepts.
+
+This hierarchical learning process begins with low-level feature detection in the initial layers of the neural network, progressing to higher-level representations in deeper layers. This capability to model intricate relationships and abstractions is what distinguishes deep learning from traditional machine learning approaches.
+
+## 2. Neural Networks and Feature Learning in Deep Learning
+
+This section examines the emergence of artificial neural networks (ANNs) in deep learning and the significance of feature extraction. Building upon the foundational concepts introduced in the previous sections, we aim to delve deeper into these topics, enhancing clarity and addressing complex aspects.
+
+## 2.1. The Importance of Artificial Neural Networks and Feature Extraction in Deep Learning
+
+To fully comprehend deep learning methods, it is essential to investigate the following key concepts:
+
+- **Fundamentals of Artificial Neural Networks (ANNs)**  
+- **Deep Learning Architectures**  
+- **Activation Functions**  
+- **Optimization Algorithms**  
+- **Data Processing**  
+
+Deep learning encompasses a level of complexity beyond that of the previously discussed topics. A solid understanding of these foundational elements is crucial for grasping the significance of feature extraction and distinguishing between automatic feature extraction in deep learning and manual feature extraction.
+
+Automatic feature extraction empowers models to analyze data and learn autonomously, resulting in faster and more accurate outcomes compared to manual feature extraction.
+
+To illustrate, consider the task of recognizing cats in images. In manual feature extraction, developers explicitly define features such as the shape of the cat’s ears, the structure of its eyes, or the length of its tail. Conversely, in a deep learning model, the network automatically learns these features by analyzing the images.
+
+In the initial layers of the network, simple features, such as edges and corners, are detected. As the data propagates through deeper layers, the model identifies more complex structures, ultimately recognizing the overall shape of the cat. This hierarchical learning process enables the model to achieve higher accuracy in recognizing cats compared to traditional manual methods.
+
+Automatic feature extraction not only reduces the reliance on human intervention but also enhances the ability of the model to generalize across diverse datasets. This capability underscores the transformative power of deep learning in addressing complex problems across various domains.
+
+## 2.2. Fundamentals of Artificial Neural Networks
+
+One study defines artificial neural networks (ANNs) as follows:  “Artificial neural networks are inspired by the complex, non-linear, and parallel information-processing capabilities of the human brain. They mimic the structure and functioning of biological neurons to simulate how the brain performs tasks such as pattern recognition and decision-making. ANNs incorporate concepts from biological components such as synaptic connections, axons, and dendrites to create artificial neurons that process electrical signals and generate responses” [4].
+
+Similarly, another study explains:  “Artificial neural networks (ANNs) are developed based on the complex, non-linear, and parallel information-processing capabilities of the human brain. This approach aims to simulate how the brain performs tasks like pattern recognition and decision-making by mimicking the structure and functioning of biological neurons” [5]. ANNs emulate biological components, including synaptic connections, axons, and dendrites, to create artificial neurons capable of processing input signals and generating appropriate responses.
+
+A typical artificial neural network is composed of three primary layers:
+
+- **Input Layer**:  
+  This layer receives raw data and transmits it directly to the subsequent layer without performing any computations.
+
+- **Hidden Layer**:  
+  The hidden layer is where the model learns and extracts underlying features from the input data. This layer performs complex transformations to uncover patterns and relationships within the data.
+
+- **Output Layer**:  
+  The output layer generates the model’s results, such as classifications, predictions, or other outputs based on the task at hand.
+
+The hierarchical structure of these layers enables ANNs to learn and generalize patterns from data, making them highly effective for tasks such as image recognition, natural language processing, and predictive modeling. The ability to model non-linear relationships and process data in parallel sets ANNs apart from traditional machine learning techniques, underscoring their importance in the field of deep learning.
+
+<img
+  src="/blog/Transition_from_Machine_Learning_to_Deep_Learning2.jpg" 
+  alt="A description of your image" 
+  style={{ width: "50%" }}
+/>
+*Figure 2. Illustration of a simple artificial neural network*
+
+Above is a simple illustration of an artificial neural network, depicting the input, hidden, and output layers arranged sequentially. To make this concept more relatable, consider a real-world example involving a family searching for a rental property. The family has specific criteria, such as property size, number of rooms, age of the property, and location. These features are supplied as inputs to the neural network.
+
+### The input layer processes these features as follows:
+
+- The input layer receives the features and transmits them to the hidden layer.
+- The hidden layer examines the relationships among these features. For instance, it might identify that a family with children requires a more spacious home with additional bedrooms. If the family prioritizes safety and modernity, the age of the property becomes a critical factor. Furthermore, proximity to reputable schools and local amenities may also be important considerations.
+- After analyzing these relationships, the output layer processes the information and provides a prediction. For example, the model might suggest a rental price based on the family’s preferences, delivering a price recommendation tailored to their needs.
+
+### 2.3. Deep Learning Architectures
+Deep learning distinguishes itself from classical artificial neural networks by employing models with significantly more hidden layers. These deeper structures enhance the network's complexity, resulting in improved accuracy. Common deep learning architectures include Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs), and Transformers. Each architecture excels at processing specific types of data. For instance, CNNs are particularly effective for image data, while RNNs are often used for time-series data and natural language processing tasks [6].
+
+### 2.4. Activation Functions
+In artificial neural networks, the output of each neuron is shaped by an activation function. Activation functions enable the network to exhibit non-linear behavior, thereby allowing the model to learn more complex relationships within the data. One widely used activation function is the Rectified Linear Unit (ReLU). ReLU eliminates negative values while retaining positive values, thereby directing the model’s focus toward meaningful features. This process not only speeds up learning but also filters out irrelevant information. ReLU is favored in deep learning due to its computational efficiency, which accelerates the training process [7].
+
+### 2.5. Optimization Algorithms
+Training artificial neural networks requires algorithms that effectively guide the learning process. Optimization algorithms aim to minimize the error function by iteratively updating the model’s weights. The most commonly used optimization algorithm is Stochastic Gradient Descent (SGD); however, more advanced methods such as Adam, Adagrad, and RMSProp are also frequently employed. These advanced algorithms offer faster and more stable learning. For example, the Adam optimizer dynamically adjusts the learning rates for each parameter, leading to more efficient learning [8].
+
+
+## 2.6. Data Processing
+
+Deep learning models rely on extensive labeled datasets. Proper preprocessing and augmentation of this data are crucial to achieving robust performance. Preprocessing steps include normalization, handling missing values, and ensuring accurate labeling.
+
+In addition, data augmentation techniques are frequently applied to enhance generalization and reduce overfitting. For instance, in image processing tasks, augmentation methods such as rotation, flipping, and scaling expose the model to a wider variety of data patterns, improving its robustness.
+
+To illustrate this further, consider a 64×64 image of a car. Each pixel in the image represents a specific color or intensity value. When this image is fed into the input layer, it results in 4,096 neurons (64 × 64 pixels), each corresponding to a pixel value. The network processes these pixel values through successive layers, enabling it to learn and recognize the car.
+
+This example underscores how theoretical concepts in neural networks translate into practical applications, showcasing the strength and versatility of deep learning in handling complex data.
+
+<img
+  src="/blog/Transition_from_Machine_Learning_to_Deep_Learning3.jpg" 
+  alt="A description of your image" 
+  style={{ width: "50%" }}
+/>
+*Figure 3. Example of an image of a car*
+
+<img
+  src="/blog/Transition_from_Machine_Learning_to_Deep_Learning4.jpg" 
+  alt="A description of your image" 
+  style={{ width: "50%" }}
+/>
+*Figure 4. Example of an image of a motorcycle*
+
+### Input Layer
+The input layer receives the raw pixel values without applying any initial processing. Each pixel acts as a neuron that feeds data into the network. Typically, these pixel values are normalized (e.g., scaled to a range of 0 to 1) to facilitate faster and more stable training.
+
+### Hidden Layer
+The hidden layer is where the network learns and extracts features. The relationships among the pixels are analyzed at this stage. In the early layers, simple features, such as edges and textures, are identified. As the network progresses through deeper layers, it learns more complex patterns related to shapes and structures. This is the stage where feature extraction occurs: the initial layers detect edges and color changes, while the deeper layers learn the overall shape of the object.
+
+### Activation Functions
+Each neuron's output in the hidden layer typically passes through an activation function, such as the Rectified Linear Unit (ReLU). ReLU eliminates negative values, thereby preventing meaningless or noisy data from propagating through the network. This process allows the model to focus on meaningful, positive features, which accelerates the learning process.
+
+### Output Layer
+Finally, the output layer utilizes the features identified in the hidden layers to make the final prediction. In a classification problem, for example, the model may predict whether the image is classified as a "car" or "not a car" based on the extracted features. This process highlights the significance of feature extraction and automatic learning within deep learning models: the model itself learns the essential features within the data, leading to faster and more accurate results.
+
+
+
+### 3. Neural Network Structure in Machine Learning and Deep Learning
+
+- **Neural Network Structure in Deep Learning:**
+	Deep learning utilizes multi-layered structures known as **Deep Neural Networks (DNNs)**. These networks are designed to handle larger datasets and learn more complex relationships due to the presence of multiple hidden layers. Each hidden layer enables the network to perform hierarchical feature extraction, progressing from basic features to increasingly intricate ones. For example, in image processing tasks, the initial layers may identify simple features such as edges, while the deeper layers can recognize more complex shapes or objects.
+
+<img
+  src="/blog/Transition_from_Machine_Learning_to_Deep_Learning5.jpg" 
+  alt="A description of your image" 
+  style={{ width: "50%" }}
+/>
+*Figure 5. Visualization of the Layered Structure of a Deep Neural Network*
+
+- **Neural Network Structure in Machine Learning:**
+	Traditional machine learning methods typically utilize simpler neural network structures, such as basic Artificial Neural Networks (ANNs), which contain fewer hidden layers. Due to the limited depth of these networks, they are unable to analyze data as comprehensively as their deep learning counterparts. As a result, manual feature extraction becomes essential. Developers are required to explicitly define relevant features to enhance the model's learning effectiveness.
+	
+
+### 4. Difference in Feature Extraction: Machine Learning vs. Deep Learning
+
+- **Manual Feature Extraction in Machine Learning:**
+  In traditional machine learning, feature extraction is a manual process. The developer is responsible for identifying and selecting meaningful features from the raw data. This step is crucial for the success of the model. For instance, in predicting credit scores, the developer may manually identify relevant features such as income level, credit history, and employment status, which help the model make more accurate predictions.
+
+- **Automatic Feature Extraction in Deep Learning:**
+  In contrast, deep learning leverages neural networks to automatically extract features from data. Due to their multi-layered architecture, deep learning models can analyze and interpret raw data without manual intervention. For example, in image processing, the initial layers of the network may identify basic features like edges or color distributions, while deeper layers may recognize more complex patterns such as faces or objects.
+
+- **Example: Gender Classification From Faces**
+  
+  - **Machine Learning Approach:**
+    - The developer manually defines facial features, such as the shape of the jawline, eyebrow thickness, or the distance between the eyes.
+    - The model is trained on these manually selected features.
+    - The performance of the model depends heavily on the relevance and quality of the manually defined features.
+  
+  - **Deep Learning Approach:**
+    - Face images are input directly into the deep neural network, which automatically identifies relevant facial features through its layers.
+    - Early layers detect basic attributes like facial outlines and key points, while deeper layers learn more detailed characteristics such as jaw structure, nose shape, or eyebrow thickness.
+    - This method generally achieves higher accuracy and is not limited by the potential oversights of manual feature selection.
+
+### 5. Conclusion
+
+In deep learning, feature extraction is performed automatically, enabling models to learn relevant features directly from the raw data without requiring manual intervention. This capability makes deep learning both more flexible and powerful compared to traditional machine learning methods. While manual feature extraction requires significant expertise and time investment, deep learning architectures have largely automated this process, allowing for more efficient and scalable learning.
+
+By leveraging multi-layered neural networks, particularly Deep Neural Networks (DNNs), deep learning models are able to analyze and learn complex data types more effectively. The automatic feature extraction process is especially valuable in areas such as image processing, text analysis, and time-series data. Moreover, deep learning models can be tailored for specific data types, with specialized architectures providing superior performance. For instance, Convolutional Neural Networks (CNNs) excel at image data analysis, providing remarkable efficiency and accuracy.
+
+The ability of deep learning models to generalize effectively, even when exposed to previously unseen data, further enhances their practical utility. As a result, deep learning has become a fundamental tool in modern data science and artificial intelligence applications. It will continue to drive technological innovation by expanding the capacity for data processing and analysis in future advancements.
+
+
+### References
+
+[1] Fetzer, J. H., & Fetzer, J. H. (1990). What is artificial intelligence? (pp. 3-27). Springer Netherlands
+[2] El Naqa, I., & Murphy, M. J. (2015). What is machine learning? (pp. 3-11). Springer International Publishing
+[3] Hao, X., Zhang, G., & Ma, S. (2016). Deep learning. *International Journal of Semantic Computing, 10*(03), 417-439
+[4] Montesinos López, O. A., Montesinos López, A., & Crossa, J. (2022). Fundamentals of artificial neural networks and deep learning. In *Multivariate statistical machine learning methods for genomic prediction* (pp. 379-425). Cham: Springer International Publishing
+[5] Bishop, C. M., & Nasrabadi, N. M. (2006). *Pattern recognition and machine learning* (Vol. 4, No. 4, p. 738). New York: Springer
+[6] Chollet, F. (2021). *Deep learning with Python*. Simon and Schuster
+[7] Nair, V., & Hinton, G. E. (2010). Rectified linear units improve restricted boltzmann machines. In *Proceedings of the 27th international conference on machine learning (ICML-10)* (pp. 807-814)
+[8] Kingma, D. P. (2014). Adam: A method for stochastic optimization. *arXiv preprint arXiv:1412.6980*
+
+**Muhammed Sen**  
+Firat University Computer Engineering  
+muhammedsnfu@gmail.com
