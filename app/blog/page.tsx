@@ -15,7 +15,7 @@ const BlogPage = () => {
       <div className="space-y-8">
         {sortedPosts.map((post, index) => (
           <Link key={index} href={post.slug} className="block">
-            <article className="group hover:bg-gray-100 p-4 rounded-lg transition-all">
+            <article className="group hover:bg-accent dark:hover:bg-zinc-900 p-4 rounded-lg transition-all">
               <h2 className="text-xl font-semibold group-hover:text-primary">
                 {post.title}
               </h2>
@@ -28,7 +28,6 @@ const BlogPage = () => {
               {post.tags && (
                 <div className="mt-4 flex gap-2 flex-wrap">
                   {post.tags.map((tag) => (
-                    // set tags to be links to the tag page
                     <Link
                       key={tag}
                       href={`/blog/tag/${encodeURIComponent(tag)}`}
@@ -47,4 +46,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage; 
+export default BlogPage;
