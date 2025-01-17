@@ -34,7 +34,7 @@ export default function TagPage({ params }: TagPageProps) {
 
   return (
     <LandingLayoutView>
-      <Subtitle>Posts tagged with "{decodedTag}"</Subtitle>
+      <Subtitle>Posts tagged with &quot;{decodedTag}&quot;</Subtitle>
       <div className="space-y-8">
         {filteredPosts.map((post, index) => (
           <Link key={index} href={post.slug} className="block" legacyBehavior>
