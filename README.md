@@ -1,6 +1,6 @@
 # Happy Hacking Space - Website Code
-![image](https://github.com/user-attachments/assets/9ca41245-8137-4f4b-ac2c-4a55ac22159b)
 
+![image](https://github.com/user-attachments/assets/9ca41245-8137-4f4b-ac2c-4a55ac22159b)
 
 Welcome to the website for Happy Hacking Space, a community-driven platform that brings together technology enthusiasts, creators, and innovators.
 
@@ -14,15 +14,16 @@ In our community, hacking represents the spirit of playful intelligence and expl
 
 > Defining hacking can be challenging due to its variable nature. However, a common trait among many hackers is their playful, intelligent, and exploratory mindset. Thus, hacking means exploring the boundaries of what is possible with a playful spirit. Activities that demonstrate playful intelligence have hack value.
 
-# Adding a New Article to the App
+## Adding a New Article to the App
+
 Follow these steps to add a new article to the app. This guide explains the structure of the markdown file and provides a template.
 
 ## Article Template
 
 Save your article as a markdown (`.mdx`) file. Below is the required template:
 
-mdx file location: `content/blog/your_post_title.mdx`<br>
-blog image location: `public/blog/your_post_img.jpg`
+- mdx file location: `content/blog/your_post_title.mdx`
+- blog image location: `public/blog/your_post_img.jpg`
 
 ```markdown
 ---
@@ -58,7 +59,6 @@ Adding an image
   style={{ width: "50%" }}
 />
 ```
-
 
 ## Technical Stack
 
