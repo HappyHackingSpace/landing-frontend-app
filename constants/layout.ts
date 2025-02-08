@@ -28,10 +28,6 @@ export const NAV_ITEMS = [
     href: "/live",
   },
   {
-    label: "Stickers",
-    href: "/stickers",
-  },
-  {
     label: "HHS",
     href: "#",
     items: [
@@ -58,6 +54,10 @@ export const NAV_ITEMS = [
       {
         label: "Branding",
         href: "/brand",
+      },
+      {
+        label: "Stickers",
+        href: "/stickers",
       },
     ],
   },
