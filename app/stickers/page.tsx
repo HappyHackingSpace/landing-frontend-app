@@ -6,7 +6,7 @@ import { motion, stagger, useAnimate } from "motion/react"
 import * as React from "react"
 import Image from "next/image"
 
-type Sticker = {
+interface StickerData {
 	src: string
 	alt: string
 	className: string
@@ -14,7 +14,9 @@ type Sticker = {
 	scale: number
 }
 
-const STICKERS: Sticker[] = [
+interface StickersPageProps {}
+
+const STICKERS: StickerData[] = [
 	{
 		src: "/stickers/pixelated.avif",
 		alt: "Pixelated HHS Sticker",
@@ -52,36 +54,40 @@ const STICKERS: Sticker[] = [
 	}
 ]
 
-export default function StickersPage() {
+export default function StickersPage({}: StickersPageProps): React.ReactElement {
 	const [scope, animate] = useAnimate()
+	
 	React.useEffect(() => {
 		animate("div", { opacity: [0, 1] }, { duration: 0.2, delay: stagger(0.08) })
-	}, [])
+	}, [animate])
+
+	const renderStickers = React.useMemo(() => 
+		STICKERS.map((sticker, index) => (
+			<FloatingElement
+				key={index}
+				className={sticker.className}
+				depth={sticker.depth}
+			>
+				<motion.div
+					className="w-32 h-32 hover:scale-105 duration-200 cursor-pointer transition-transform relative"
+					style={{ transform: `scale(${sticker.scale})` }}
+				>
+					<Image
+						src={sticker.src}
+						alt={sticker.alt}
+						fill
+						className="object-contain"
+					/>
+				</motion.div>
+			</FloatingElement>
+		)), [])
 
 	return (
 		<LandingLayoutView>
 			<div className="absolute inset-0 overflow-hidden">
 				<div className="w-full" ref={scope}>
 					<Floating className="" sensitivity={2}>
-						{STICKERS.map((sticker, index) => (
-							<FloatingElement
-								key={index}
-								className={sticker.className}
-								depth={sticker.depth}
-							>
-								<motion.div
-									className="w-32 h-32 hover:scale-105 duration-200 cursor-pointer transition-transform relative"
-									style={{ transform: `scale(${sticker.scale})` }}
-								>
-									<Image
-										src={sticker.src}
-										alt={sticker.alt}
-										fill
-										className="object-contain"
-									/>
-								</motion.div>
-							</FloatingElement>
-						))}
+						{renderStickers}
 					</Floating>
 					<div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-50">
 						<motion.div
