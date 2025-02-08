@@ -1,5 +1,6 @@
 import { SITE } from "@hhs/constants/metadata";
 import { getAllEvents } from "../lib/kommunity";
+import { allBlogs } from "@hhs/.content-collections/generated";
 
 interface KommunityEvent {
   slug: string;
@@ -19,12 +20,25 @@ export default async function sitemap() {
     priority: 0.6,
   }));
 
+  const blogUrls = allBlogs.map((post) => ({
+    url: `${SITE.url}${post.slug}`,
+    lastModified: new Date(post.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   return [
     {
       url: SITE.url,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
+    },
+    {
+      url: `${SITE.url}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
     },
     {
       url: `${SITE.url}/philosophy`,
@@ -74,6 +88,7 @@ export default async function sitemap() {
       changeFrequency: "weekly",
       priority: 0.8,
     },
-    ...eventUrls
+    ...eventUrls,
+    ...blogUrls
   ];
 }
