@@ -9,12 +9,24 @@ import Image from "next/image"
 interface StickerData {
 	src: string
 	alt: string
+	// Class name for positioning: top-1/2 left-[15%]
+	// +--------------------------------------------------+
+	// |                                                  |
+	// |                                                  |
+	// |                                                  |
+	// |        [Element]                                 |  <-- Positioned at 1/2 down (540px)
+	// |                                                  |
+	// |                                                  |
+	// +--------------------------------------------------+
+	//         ^
+	//         |
+	//   15% from the left (288px)
 	className: string
 	depth: number
 	scale: number
 }
 
-interface StickersPageProps {}
+interface StickersPageProps { }
 
 const STICKERS: StickerData[] = [
 	{
@@ -54,14 +66,14 @@ const STICKERS: StickerData[] = [
 	}
 ]
 
-export default function StickersPage({}: StickersPageProps): React.ReactElement {
+export default function StickersPage({ }: StickersPageProps): React.ReactElement {
 	const [scope, animate] = useAnimate()
-	
+
 	React.useEffect(() => {
 		animate("div", { opacity: [0, 1] }, { duration: 0.2, delay: stagger(0.08) })
 	}, [animate])
 
-	const renderStickers = React.useMemo(() => 
+	const renderStickers = React.useMemo(() =>
 		STICKERS.map((sticker, index) => (
 			<FloatingElement
 				key={index}
