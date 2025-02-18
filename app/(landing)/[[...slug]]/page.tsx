@@ -4,14 +4,15 @@ import Markdown from "@hhs/components/custom/mdx";
 import Subtitle from "@hhs/components/custom/subtitle";
 
 interface ViewPageProps {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
+  }>;
 }
 
-async function getViewFromParams(props: ViewPageProps) {
+async function getViewFromParams(props: ViewPageProps = { params: Promise.resolve({ slug: [] }) }) {
   const { params } = props;
-  const slug = params.slug?.join("/") || "";
+  const slugArray = (await params).slug || [];
+  const slug = slugArray.join("/");
   const view = allLandings.find((view) => view.slugAsParams === slug);
   if (!view) {
     return null;
@@ -20,11 +21,10 @@ async function getViewFromParams(props: ViewPageProps) {
   return view;
 }
 
-export async function generateStaticParams(): Promise<
-  ViewPageProps["params"][]
-> {
+
+export async function generateStaticParams() {
   return allLandings.map((view) => ({
-    slug: view.slugAsParams.split("/"),
+    slug: view.slugAsParams.split('/'),
   }));
 }
 

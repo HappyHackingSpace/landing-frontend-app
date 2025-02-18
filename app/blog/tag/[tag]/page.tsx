@@ -6,12 +6,12 @@ import Subtitle from "@hhs/components/custom/subtitle";
 import { Metadata } from "next";
 
 interface TagPageProps {
-  params: {
+  params: Promise<{
     tag: string;
-  };
+  }>;
 }
 
-export async function generateStaticParams(): Promise<TagPageProps["params"][]> {
+export async function generateStaticParams(): Promise<{ tag: string }[]> {
   const tags = new Set<string>();
   allBlogs.forEach((post) => {
     post.tags?.forEach((tag) => tags.add(tag));
@@ -21,7 +21,8 @@ export async function generateStaticParams(): Promise<TagPageProps["params"][]> 
   }));
 }
 
-export function generateMetadata({ params }: TagPageProps): Metadata {
+export async function generateMetadata(props: TagPageProps): Promise<Metadata> {
+  const params = await props.params;
   const decodedTag = decodeURIComponent(params.tag);
   return {
     title: `${decodedTag.charAt(0).toUpperCase() + decodedTag.slice(1)} posts`,
@@ -50,7 +51,8 @@ export function generateMetadata({ params }: TagPageProps): Metadata {
   };
 }
 
-export default function TagPage({ params }: TagPageProps) {
+export default async function TagPage(props: TagPageProps) {
+  const params = await props.params;
   const decodedTag = decodeURIComponent(params.tag);
   const filteredPosts = allBlogs
     .filter((post) => post.tags?.includes(decodedTag))

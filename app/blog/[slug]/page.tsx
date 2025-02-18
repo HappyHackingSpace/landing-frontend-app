@@ -7,9 +7,9 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 async function getBlogPostFromParams(params: { slug: string }) {
@@ -20,13 +20,14 @@ async function getBlogPostFromParams(params: { slug: string }) {
   return post;
 }
 
-export async function generateStaticParams(): Promise<BlogPostPageProps["params"][]> {
-  return allBlogs.map((post) => ({
-    slug: post.slugAsParams,
+export async function generateStaticParams() {
+  return allBlogs.map((view) => ({
+    slug: view.slugAsParams,
   }));
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata(props: BlogPostPageProps): Promise<Metadata> {
+  const params = await props.params;
   const post = await getBlogPostFromParams(params);
 
   if (!post) {
@@ -39,12 +40,12 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const absoluteOgImage = `${process.env.NEXT_PUBLIC_APP_URL}${ogImage}`;
   const findImage = post.body.code.match(/src:"([^"]+)"/);
   let image = ""
-  if(findImage){
+  if (findImage) {
     image = findImage[1]
-  }else{
+  } else {
     image = absoluteOgImage
   }
-  
+
   return {
     title: post.title,
     description: post.summary,
@@ -75,7 +76,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
 
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function BlogPostPage(props: BlogPostPageProps) {
+  const params = await props.params;
   const post = await getBlogPostFromParams(params);
 
   if (!post) {
