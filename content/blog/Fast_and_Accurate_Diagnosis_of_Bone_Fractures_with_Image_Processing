@@ -1,0 +1,173 @@
+---
+title: "Bone Fracture Detection"
+subtitle: " Görüntü İşleme ile Kemik Kırıklarının Hızlı ve Doğru Tanısı"
+summary: "Bu çalışma, 4900 kemik kırığı röntgen görüntüsü üzerinde gerçekleştirilen derin öğrenme tabanlı sınıflandırma modelinin eğitimini ve performans analizini inceler. Model, evrişimli sinir ağı (CNN) mimarisi kullanılarak geliştirilmiş ve transfer öğrenme prensipleriyle desteklenmiştir. Eğitim sürecinde doğruluk, hassasiyet, geri çağırma ve F1 skoru gibi metrikler kullanılmıştır. Veri seti, 4900 kemik kırığı röntgen görüntüsünden oluşmakta ve eğitim, test ve doğrulama alt kümelerine ayrılmıştır. Modelin başarı oranı %94'tür. Ayrıca, eğitim sürecindeki metriklerin kemik kırığı sınıflarına özgü performansları detaylı bir şekilde incelenmiştir. Sonuçlar, modelin kemik kırıklarını yüksek doğruluk oranıyla başarılı bir şekilde sınıflandırdığını ve genelleme yeteneğini gösterdiğini ortaya koymaktadır. Alan altı eğri (AUC) değerleri, modelin sınıflandırma yeteneğini güvenilir bir şekilde değerlendirmiştir. Geliştirilen modelin, tıbbi görüntüleme alanında etkili bir kullanım potansiyeline sahip olduğu görülmüştür."
+publishedAt: "2025-03-01"
+author: "Muhammed ŞEN"
+tags: ["machinelearning","deeplearning"]
+---
+
+# Görüntü İşleme ile Kemik Kırıklarının Hızlı ve Doğru Tanısı
+
+**Özet**— Bu çalışma, 4900 kemik kırığı röntgen görüntüsü üzerinde gerçekleştirilen derin öğrenme tabanlı sınıflandırma modelinin eğitimini ve performans analizini inceler. Model, evrişimli sinir ağı (CNN) mimarisi kullanılarak geliştirilmiş ve transfer öğrenme prensipleriyle desteklenmiştir. Eğitim sürecinde doğruluk, hassasiyet, geri çağırma ve F1 skoru gibi metrikler kullanılmıştır. Veri seti, 4900 kemik kırığı röntgen görüntüsünden oluşmakta ve eğitim, test ve doğrulama alt kümelerine ayrılmıştır. Modelin başarı oranı %94'tür. Ayrıca, eğitim sürecindeki metriklerin kemik kırığı sınıflarına özgü performansları detaylı bir şekilde incelenmiştir. Sonuçlar, modelin kemik kırıklarını yüksek doğruluk oranıyla başarılı bir şekilde sınıflandırdığını ve genelleme yeteneğini gösterdiğini ortaya koymaktadır. Alan altı eğri (AUC) değerleri, modelin sınıflandırma yeteneğini güvenilir bir şekilde değerlendirmiştir. Geliştirilen modelin, tıbbi görüntüleme alanında etkili bir kullanım potansiyeline sahip olduğu görülmüştür.
+
+**Anahtar Kelimeler**—Kemik Kırığı, Derin Öğrenme, Sınıflandırma, Röntgen Görüntüleri
+
+# Abstract
+
+This study examines the training and performance analysis of a deep learning-based classification model on 4900 X-ray images of bone fractures. The model was developed using a Convolutional Neural Network (CNN) architecture and supported by transfer learning principles. Metrics such as accuracy, precision, recall, and F1 score were utilized during the training process. The dataset consists of 4900 X-ray images of bone fractures, divided into training, testing, and validation subsets. The success rate of the model is 94%. Additionally, the performance of metrics during the training process was extensively examined for specific fracture classes. The results demonstrate that the model successfully classifies bone fractures with high accuracy and exhibits generalization capabilities. Area Under the Curve (AUC) values reliably assessed the classification ability of the model. The developed model is observed to have effective potential for use in the field of medical imaging.
+
+**Keywords:** Bone Fracture, Deep Learning, Classification, X-ray Images
+
+# I. GİRİŞ
+
+Bu çalışma, tıbbi görüntüleme alanında önemli bir konu olan kemik kırıklarının tespiti ve sınıflandırılması üzerine odaklanmaktadır. Kemik kırıkları, tıbbi teşhis ve tedavi süreçlerinde kritik bir rol oynayan önemli patolojiler arasında yer almaktadır. Geleneksel teşhis yöntemleri genellikle uzun sürebilir ve insan hatası riskini içerebilirken, derin öğrenme tabanlı sınıflandırma modelleri, bu süreçleri hızlandırabilir ve daha doğru sonuçlar elde etmeye olanak tanıyabilir.
+
+Bu çalışmada, 4900 kemik kırığı röntgen görüntüsü üzerinde geliştirilen bir derin öğrenme modelinin eğitimi ve performans analizi detaylı bir şekilde incelenmiştir. Modelin evrişimli sinir ağı (CNN) mimarisi kullanılarak geliştirilmiş olması, görüntü verilerini etkili bir şekilde analiz etme yeteneği açısından önemlidir. Ayrıca, transfer öğrenme prensipleriyle desteklenmiş olması, modelin genelleme yeteneğini artırabilir.
+
+Eğitim sürecinde kullanılan metrikler arasında doğruluk, hassasiyet, geri çağırma ve F1 skoru bulunmaktadır. Bu metrikler, modelin performansını çeşitli açılardan değerlendirmeye olanak tanımaktadır. Veri seti, 4900 kemik kırığı röntgen görüntüsünden oluşmakta ve eğitim, test ve doğrulama alt kümelerine ayrılmıştır, bu da modelin güvenilir bir şekilde değerlendirilmesini sağlamaktadır.
+
+Elde edilen sonuçlar, geliştirilen modelin %94'lük bir başarı oranına sahip olduğunu göstermektedir. Ayrıca, eğitim sürecindeki metriklerin kemik kırığı sınıflarına özgü performansları detaylı bir şekilde incelenmiş ve modelin kemik kırıklarını yüksek doğruluk oranıyla sınıflandırdığı görülmüştür.
+
+Bu çalışma, geliştirilen modelin genelleme yeteneğini değerlendirmek adına alan altı eğri (AUC) değerlerini kullanmıştır. Bu değerler, modelin sınıflandırma yeteneğini güvenilir bir şekilde ölçmekte ve sonuçlar üzerinde daha fazla güvenilirlik katmaktadır.
+
+Sonuç olarak, bu çalışma, tıbbi görüntüleme alanında kemik kırıklarının sınıflandırılması için etkili bir derin öğrenme modelinin geliştirilmesini ve başarılı bir şekilde uygulanmasını ortaya koymaktadır. Geliştirilen modelin, gelecekte daha geniş kemik kırığı veri setleriyle daha da iyileştirilebilecek bir potansiyele sahip olduğu vurgulanmaktadır.
+
+## A. Literatür Taraması
+
+Bu çalışma, kemik kırığı tespiti ve sınıflandırılması alanındaki önemli gelişmeleri değerlendirmek ve mevcut literatürdeki bilgileri derlemek ve bu çalışmayla karşılaştırmak amacıyla gerçekleştirilen bir literatür taramasını da içermektedir.
+
+Kemik kırıkları, tıbbi görüntüleme teknolojisinin ilerlemesiyle birlikte, teşhis ve tedavi süreçlerinde önemli bir odak noktası haline gelmiştir. Bu nedenle, literatür taraması, mevcut bilimsel çalışmaların, teknolojik yeniliklerin ve metodolojik yaklaşımların özeti olarak bu alandaki güncel durumu ortaya koymayı amaçlamaktadır.
+
+Öncelikle, kemik kırığı tespiti ve sınıflandırılmasıyla ilgili gelişmiş tıbbi görüntüleme tekniklerine yönelik literatürdeki önemli çalışmalar gözden geçirilmiştir. Geleneksel radyolojik yöntemlerden başlayarak, son yıllarda yaygın olarak kullanılan dijital görüntüleme teknikleri ve bu tekniklerin sağlık sektöründeki etkisi incelenmiştir.
+
+Ayrıca, derin öğrenme ve özellikle evrişimli sinir ağları (CNN) gibi yapay zeka temelli sınıflandırma modellerinin kemik kırığı teşhisindeki rolüne odaklanılmıştır. Literatürdeki bu modellerin kullanımıyla ilgili avantajlar, zorluklar ve başarıları değerlendirilmiştir. Transfer öğrenme prensiplerinin, bu tür modellerin performansını artırmak için nasıl kullanılabileceği üzerine yapılan çalışmalar da literatür taramasının bir parçasını oluşturmuştur.
+
+Son olarak, benzer çalışmalardan elde edilen bulguların, mevcut araştırmaya temel oluşturacak şekilde incelenmesi ve değerlendirilmesi amacıyla literatürdeki diğer önemli tıbbi görüntüleme çalışmalarına genel bir bakış sunulmuştur.
+
+Literatürde yapılmış çalışmalara genel anlamda bakmamız gerekirse de farklı modellerle farklı yöntemlerle desteklenerek iyi oranda doğruluğa sahip birçok çalışma bulunmaktadır. Bunlar incelendiğinde ise şu şekilde çalışalar bulunmaktadır:
+
+Literatürde daha önce yapılmış bir çalışmada özellikle X-ray görüntüleri için wavelet dönüşüm tabanlı segmentasyon ve sinir ağı tabanlı sınıflandırma metodunun ayrıntılı bir açıklaması sunulmaktadır. Bu yöntem, geleneksel segmentasyon tekniklerine göre özel bir öneme sahip olan wavelet dönüşümü kullanarak görüntüleri etkili bir şekilde analiz etmektedir. Ayrıca, Signal to Noise Ratio (SNR), Peak Signal to Noise Ratio (PSNR), Structural Similarity (SSIM), ve Entropi gibi istatistiksel görüntü tanımlayıcılarıyla yapılan değerlendirmeler, önerilen yöntemlerin özellikle tıbbi görüntü segmentasyonunda avantajlı olduğunu ortaya koymaktadır[1]. Yapılan farklı bir çalışmada ise kemik kırığı teşhisi için geleneksel olarak uzun süre gerektiren manuel bir sürecin yerine makine öğrenimi ve derin öğrenme tekniklerini kullanarak daha hızlı bir yöntem önerilmektedir Özellikle, bir çok ölçekli özellik birleştirme yaklaşımını benimseyen konvolüsyonel sinir ağı (CNN) ve geliştirilmiş bir Canny kenar algortimasının entegrasyonunu içeren bir hibrid ölçekli kırık ağı (SFNet) önerilmektedir. Yapılan inovasyon, geliştirilmiş Canny kenar algortiması kullanarak görüntülerde kenar elde etmeyi içermektedir, bu sayede kırık bölgeyi doğru bir şekilde lokalize etmek mümkün olmaktadır. Gri tonlu görüntüler ve ilgili Canny kenar görüntülerinin ardından, önerilen hibrid SFNet'e eğitim ve değerlendirme için beslenmektedir. Bu önerilen yöntemin performansı, bir kemik görüntü veri setinde mevcut olan diğer önde gelen derin CNN modelleriyle karşılaştırılmıştır. Elde edilen sonuçlar, Canny ile SFNet'in (SFNet + Canny) kemik kırığı teşhisi için %99,12 doğruluk, %99 F1 puanı ve %100 geri çağırma başarısına ulaştığını göstermektedir[2]. Yapılan bir diğer çalışmada ise dünya genelinde birçok hastane ve klinikte rapor edilen kola ait kırıkla ilgili yaralanmaların üstesinden gelmek adına yeni bir derin öğrenme tabanlı kırık tespiti yöntemi önerilmiştir. İlk olarak, X-ışını görüntülerini işlemek için YOLACT++ görüntü segmentasyonu ve Kontrast Sınırlı Adaptif Histogram Eşitleme yöntemlerinin bir kombinasyonunu içeren bir algoritma kullanılmışıtır. Daha sonra, YOLOv4, kemik kırığı pozisyonunu belirlemek amacıyla dört veri artırma tekniği ile eğitilmiştir. Önerilen yöntemi kullanarak elde edilen en üst düzey sonuç %81,91'dir. Ayrıca, deneysel sonuçlar, yöntemin küçük bir veri setinde uygulandığında Faster-RCNN tabanlı çözümü geride bıraktığını doğrulamıştır[3].
+
+Yapılmış bir diğer çalışmadaysa YOLOv7-mask ile X-ışını görüntülerini segmente ederek başlanmış. Daha sonra, Histogram Eşitleme ve Kontrast Sınırlı Adaptif Histogram Eşitleme algoritmalarını kullanarak görüntü kontrastı artırılmıştır. Bu iki algoritmanın birleşimine dayanan bir görüntü karıştırma yöntemi önerilmiştir. Super-Resolution Generative Adversarial Networks (SRGAN) ile görüntü çözünürlüğü artırılmış. Son olarak, YOLOv7-E6E, kırıkları tanımlamak ve lokalize etmek amacıyla veri artırma teknikleriyle eğitilmiş. Önerilen yöntemle elde edilen en yüksek doğruluk %84,03 olmuştur[4]. Ayrıca yapılan bir çalışmada ise kırık ve sağlıklı kemiyi sınıflandırmak için bir derin sinir ağı modeli geliştirilmiştir. Derin öğrenme modeli, küçük veri setinde aşırı uyum sağlamış. Bu nedenle, veri artırma teknikleri kullanılarak veri setinin boyutu artırılmıştır. Modelin performansını değerlendirmek için softmax ve Adam optimizatörü kullanılarak üç deneme gerçekleştirilmiştir. Önerilen modelin 5 katlı çapraz doğrulama kullanılarak sağlıklı ve kırık kemik için sınıflandırma doğruluğu %92,44'tür. Test verisinin %10'u ve %20'sindeki doğruluk sırasıyla %95'in üzerinde ve %93'tür[5]. Yapılan bir diğer ayrıntılı çalışmanın odak noktası, uzun kemiklerde ve özellikle bacak kemiğinde (genellikle Tibia olarak adlandırılır) kırıkları otomatik olarak tespit etmektir. Basit diagnostik X-ışınlarından kırıkları otomatik olarak tespit etmek amacıyla çoklu sınıflandırma sistemleri kullanılmıştır. İki tip özellik (doku ve şekil) ve üç tip sınıflandırıcı (Geri Yayılım Sinir Ağı, K-En Yakın Komşu, Destek Vektör Makinesi) kullanılarak toplamda 12 adet ensemble modeli önerilmiştir[6]. Literatürde bizim çalışmalarımıza benzer çalışmalar veya fark
+
+# II. METOT
+
+Bu çalışma, kemik kırıklarını tespit etmek amacıyla derin öğrenme modeli kullanarak bir sınıflandırma görevini ele almaktadır. İlk adımda, Kaggle üzerinden elde edilen bir veri seti kullanılmıştır. Veri seti, eğitim, test ve doğrulama olmak üzere üç farklı kısma ayrılmıştır. Eğitim seti, modelin öğrenmesi için kullanılan görüntüler ve bu görüntülerin etiketlerini içermektedir.
+
+## A. Veri Seti
+
+Bu çalışma için kullanılan veri seti, kemik kırığı tespiti amacıyla toplamda 5000 röntgen görüntüsünden oluşmaktadır. Görüntüler, kemik kırığı olan ve olmayan durumları içermekte olup, her bir röntgen görüntüsü etiketlenmiştir. Veri seti, eğitim ve test verileri olmak üzere iki bölüme ayrılmıştır. Derin öğrenme modeli için eğitim sürecinde kullanılan görüntüler, sınıflandırma algoritmalarının geliştirilmesi ve modelin doğruluğunun değerlendirilmesi amacıyla elde edilmiştir. Bu veri seti, kemik kırığı tespiti konusunda derin öğrenme modellerinin etkinliğini değerlendirmek üzere kullanılmıştır. Veri setinden bir görüntü aşağıda verilmiştir.
+
+<img
+  src="/blog/032025/photo1.png" 
+  alt="Veri Seti Görüntüsü" 
+  style={{ width: "50%" }}
+/>
+
+## B. Kullanılan Teknolojiler
+
+Bu çalışmada veri setleri üzerinde değerli sonuçlar elde edebilmek için birçok model ve eğitim aşaması için yararlı olacağına inanılan kütüphaneler kullanılmıştır. Bunlar:
+
+* **TensorFlow:** TensorFlow, makine öğrenimi için kapsamlı, esnek bir ekosistem sunan açık kaynaklı bir platformdur. Araştırmacıların ML'deki en son teknolojiyi keşfetmelerine ve geliştiricilerin kolayca ML tabanlı uygulamalar inşa etmelerine olanak tanıyan araçlar, kütüphaneler ve topluluk kaynaklarıyla zengin bir yapıya sahiptir[7].
+* **Keras:** TensorFlow üzerinde çalışabilen derin öğrenme için kullanılan kolay öğrenilebilir bir Python kütüphanesidir. Geliştiricilere sinir ağları oluşturma odaklıdır ve tensorların detaylarıyla otomatik olarak ilgilenir. İki temel çerçeve türü vardır: sıralı API ve fonksiyonel API. Sıralı API, en yaygın ve kullanımı kolay olanıdır[8].
+* **Early Stopping:** Eğitim sırasında modelin performansının belirli bir ölçüt üzerinden izlenmesini sağlayan bir tekniktir. Belirli bir noktada performansın artık iyileşmediği veya aşırı öğrenmeye yol açtığı durumda eğitimi durdurur[9].
+* **CNN:** Evrişimli Sinir Ağı (CNN), veriden doğrudan öğrenen derin öğrenme için bir ağ mimarisidir. CNN'ler, özellikle nesneleri tanımak için görsellerde desenleri bulma konusunda çok kullanışlıdır. Ayrıca, ses, zaman serisi ve sinyal verisi gibi görsel olmayan verileri sınıflandırmak için de oldukça etkili olabilirler. Aşağıda CNN mimarisini daha net anlamak için bir görsel verilmiştir[10].
+
+<img
+  src="/blog/032025/photo2.png" 
+  alt="CNN ve Katmanları [11]" 
+  style={{ width: "50%" }}
+/>
+
+
+Bu çalışmada, kırık kemikleri tespit etmek amacıyla bir derin öğrenme modeli geliştirildi. Model, evrişimli sinir ağı (Convolutional Neural Network - CNN) mimarisi kullanılarak inşa edildi. İlk katmanda, 3x3 boyutlu filtrelerle 32 adet evrişimli katman bulunmaktadır ve giriş görüntülerini işlemek için ReLU aktivasyon fonksiyonu kullanılmıştır. Ardından, Batch Normalization uygulanan ve ardından 2x2 boyutunda bir maksimum havuzlama (MaxPooling) katmanı eklenmiştir. Modelin karmaşıklığını artırmak amacıyla, 0.3 oranında dropout (bırakma) uygulandı.
+
+İkinci bir evrişimli katman daha eklenmiş olup, bu katmanda 64 adet 3x3 boyutlu filtre kullanıldı ve yine ReLU aktivasyon fonksiyonu ile işlendi. Benzer şekilde, Batch Normalization ve MaxPooling katmanları eklenmiştir ve modelin aşırı uyuma karşı daha dirençli olması için dropout kullanılmıştır.
+
+Modelin üçüncü evrişimli katmanında ise 128 adet 3x3 boyutlu filtre bulunmaktadır. Bu katmanda da ReLU aktivasyon fonksiyonu ve Batch Normalization uygulanmıştır. Ardından, modelin daha önceki katmanlardan öğrendiği özellikleri çıkarmak amacıyla bir flattening katmanı eklenmiştir.
+
+Tam bağlantılı (dense) katmanlara geçiş yapılarak, modelin daha karmaşık ilişkileri öğrenmesi sağlanmıştır. İlk tam bağlantılı katmanda 256 nöron ve ReLU aktivasyon fonksiyonu kullanılmıştır. Ayrıca, aşırı uyumu önlemek amacıyla 0.3 oranında dropout uygulanmıştır.
+
+Daha sonra, ikinci tam bağlantılı katmanda 128 nöron ve yine ReLU aktivasyon fonksiyonu bulunmaktadır. Bu katmanda da 0.3 oranında dropout uygulanarak modelin genelleme yeteneği artırılmıştır.
+
+Son katmanda ise tek bir nöron bulunmaktadır ve sigmoid aktivasyon fonksiyonu kullanılarak ikili sınıflandırma gerçekleştirilmiştir. Modelin toplam parametre sayısı ve mimarisi, eğitim verilerini etkili bir şekilde öğrenmesini sağlamak amacıyla deneysel olarak belirlenmiştir. Modelin performansını değerlendirmek için 'adam' optimizasyon algoritması ve 'binary_crossentropy' kayıp fonksiyonu kullanılmıştır.
+fonksiyonu kullanılmıştır. Ayrıca, modelin eğitimini takip etmek ve aşırı uyumu önlemek için ModelCheckpoint ve EarlyStopping geri arama fonksiyonları eklenmiştir.
+
+Eğitim sırasında elde edilen kayıp, doğruluk, hassasiyet ve AUC metrikleri üzerinden modelin performansı değerlendirilmiştir. Elde edilen sonuçlara dayanarak, modelin test veri kümesindeki performansı değerlendirilmiş ve bu sonuçlar sınıflandırma raporu ve karışıklık matrisi üzerinden detaylı bir analiz ile sunulmuştur.
+
+Eğitimin sonucunda elde edilen başarı oranı aşağıda verilmiştir. Elde edilen %98 oranındaki başarı oranı eğitimin ne kadar kaliteli olduğunu göstermektedir.
+
+<img
+  src="/blog/032025/photo3.png" 
+  alt="Eğitimdeki Başarı Oranı" 
+  style={{ width: "50%" }}
+/>
+
+
+<img
+  src="/blog/032025/photo4.png" 
+  alt="Confusion Matrix" 
+  style={{ width: "50%" }}
+/>
+
+
+Eğitim sonucunda test veri setinden alınan fotolar aşağıda verilmiştir. Test veri setinde ki fotoğrafları büyük oranda tanıdığı görülmüştür.
+
+<img
+  src="/blog/032025/photo5.png" 
+  alt="Test verilerinde Tanıma - 1" 
+  style={{ width: "50%" }}
+/>
+
+
+
+<img
+  src="/blog/032025/photo6.png" 
+  alt="Test verilerinde Tanıma - 2" 
+  style={{ width: "50%" }}
+/>
+
+Bu çalışmadan gerçekleştirilen model eğitimin farklı çalışmalarda oluşturulan modellerle karşılaştırılmasını gösteren tablo aşağıda verilmiştir.
+
+# Farklı Çalışmalardaki Modellerin Karşılaştırılması
+
+| Modeller                      | Doğruluk         |
+|--------------------------------|-----------------|
+| SFNet + Canny                 | %99.12          |
+| YOLOv4                         | %81.91          |
+| YOLOv7-E6E                     | %84.03          |
+| Softmax ve Adam Optimizatörü   | %93-%95 ve üzeri |
+| Bu Çalışmadaki Model           | %98             |
+
+# III. TARTIŞMA VE SONUÇ  
+
+Bu çalışma, kemik kırığı tespiti için derin öğrenme modelinin başarıyla kullanılabileceğini göstermektedir. Yaklaşık 5000 röntgen görüntüsünden oluşan veri seti üzerinde elde edilen %98 başarı oranı, modelin güvenilirliğini vurgular. Bu sonuçlar, klinik uygulamalarda radyologlara yardımcı olabilecek ve tanı sürecini hızlandırabilecek etkili bir araç sunmaktadır.  
+
+Ancak, bu çalışma sınırlamalara sahiptir. Veri setinin spesifik özellikleri ve genel geçerliliği göz önüne alındığında, modelin farklı hastane veya popülasyonlarda test edilmesi gereklidir. Ayrıca, elde edilen başarı oranının gerçek klinik koşullarda nasıl performans göstereceği üzerine daha fazla çalışmaya ihtiyaç vardır.  
+
+Bu çalışma, kemik kırığı tespiti alanında derin öğrenme modellerinin potansiyelini vurgulamaktadır ve ileride bu alandaki araştırmalara ilham kaynağı olabilir.  
+
+## REFERANSLAR  
+
+[1] Bagaria, Rinisha, Sulochana Wadhwani, and Arun Kumar Wadhwani. "A wavelet transform and neural network based segmentation & classification system for bone fracture detection." *Optik* 236 (2021): 166687.  
+
+[2] Yadav, Dhirendra Prasad, et al. "Hybrid SFNet model for bone fracture detection and classification using ML/DL." *Sensors* 22.15 (2022): 5823.  
+
+[3] Nguyen, Hoai Phuong, Thi Phuong Hoang, and Huy Hoang Nguyen. "A deep learning based fracture detection in arm bone X-ray images." *2021 International Conference on Multimedia Analysis and Pattern Recognition (MAPR).* IEEE, 2021.  
+
+[4] Nguyen, Huy Hoang, Tuan Khoi Nghiem, and Ngoc Minh Dang. "A Novel Arm Bone Fracture Detection Using Deep Learning." *International Conference on Advances in Information and Communication Technology.* Cham: Springer Nature Switzerland, 2023.  
+
+[5] Yadav, D. P., and Sandeep Rathor. "Bone fracture detection and classification using deep learning approach." *2020 International Conference on Power Electronics & IoT Applications in Renewable Energy and its Control (PARC).* IEEE, 2020.  
+
+[6] Umadevi, N., and S. N. Geethalakshmi. "Multiple classification system for fracture detection in human bone x-ray images." *2012 Third International Conference on Computing, Communication and Networking Technologies (ICCCNT'12).* IEEE, 2012.  
+
+[7] Developers, TensorFlow. "TensorFlow." *Zenodo* (2022).  
+
+[8] Manaswi, Navin Kumar, and Navin Kumar Manaswi. "Understanding and working with Keras." *Deep Learning with Applications Using Python: Chatbots and Face, Object, and Speech Recognition with TensorFlow and Keras* (2018): 31-43.  
+
+[9] Prechelt, Lutz. "Early stopping-but when?." *Neural Networks: Tricks of the Trade.* Berlin, Heidelberg: Springer Berlin Heidelberg, 2002. 55-69.  
+
+[10] *Convolutional Neural Networks (CNN) — Architecture Explained,* Jun. 1, 2022. [Online]. Available: [Link](https://medium.com/@draj0718/convolutional-neural-networks-cnn-architectures-explained-716fb197b243#:~:text=A%20convolutional%20neural%20network%20(CNN,time%20series%2C%20and%20signal%20data).  
+
+[11] *Understanding of Convolutional Neural Network (CNN) — Deep Learning.* [Link](https://medium.com/@RaghavPrabhu/understanding-of-convolutional-neural-network-cnn-deep-learning-99760835f148). Accessed 7 Dec 2018.  
