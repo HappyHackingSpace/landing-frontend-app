@@ -111,9 +111,6 @@ const StickersPage: React.FC = () => {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.88, delay: 0.5 }}
 						>
-							<p className="text-5xl md:text-7xl text-white font-calendas italic">
-								Stickers
-							</p>
 						</motion.div>
 					</div>
 				</div>
