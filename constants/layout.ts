@@ -63,7 +63,7 @@ export const NAV_ITEMS = [
   },
   {
     label: "Blog",
-    href: "/blog",
+    href: "https://happyhackingspace.blog/",
   },
 ];
 
