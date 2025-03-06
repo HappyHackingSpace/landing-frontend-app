@@ -14,6 +14,14 @@ In our community, hacking represents the spirit of playful intelligence and expl
 
 > Defining hacking can be challenging due to its variable nature. However, a common trait among many hackers is their playful, intelligent, and exploratory mindset. Thus, hacking means exploring the boundaries of what is possible with a playful spirit. Activities that demonstrate playful intelligence have hack value.
 
+## Project Goals
+
+Our current development focuses on creating a modern, engaging website that will:
+- Increase visitor traffic and engagement
+- Improve content readability
+- Create a more modern and appealing user interface
+- Foster community interaction and collaboration
+
 ## Technical Stack
 
 This is a modern web application built with:
@@ -23,6 +31,23 @@ This is a modern web application built with:
 - [Magic UI](https://magic-ui.com) - Modern UI component library
 - [TypeScript](https://www.typescriptlang.org) - Type safety and enhanced developer experience
 - [MongoDB](https://www.mongodb.com) - NoSQL database for flexible data storage
+
+## Project Structure
+
+The website will feature the following key sections:
+
+- **Homepage** - Engaging landing page with featured content
+- **About/Community** - Information about HHS and our community
+- **Projects/Showcase** - Display of community projects and achievements
+- **Blog/News** - Latest updates and articles
+- **Contact/Join** - Ways to get involved with the community
+
+## Current Development Status
+
+The project is currently in its initial stages with:
+- Basic project structure and README set up
+- Technical stack defined and dependencies configured
+- Initial development of the frontend template
 
 ## Getting Started
 
