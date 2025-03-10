@@ -4,6 +4,8 @@ import { Button } from './ui/button';
 import MobileNav from './MobileNav';
 import LanguageSelector from './LanguageSelector';
 import { useTranslation } from '@/hooks/useTranslation';
+import Image from 'next/image';
+import Logo from './custom/Logo';
 
 const Header = () => {
   const t = useTranslation();
@@ -13,7 +15,7 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-bold text-xl">{t.common.appName}</span>
+            <Logo />
           </Link>
         </div>
         
