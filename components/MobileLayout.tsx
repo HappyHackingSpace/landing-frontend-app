@@ -1,6 +1,7 @@
 import React from 'react';
 import MobileNav from './MobileNav';
 import Footer from './Footer';
+import HeroCarousel from './HeroCarousel';
 
 interface MobileLayoutProps {
   children: React.ReactNode;
@@ -14,6 +15,8 @@ const MobileLayout = ({ children }: MobileLayoutProps) => {
         <h1 className="text-xl font-bold">HHS Mobile</h1>
         <MobileNav />
       </div>
+      
+      <HeroCarousel />
       
       <main className="flex-1 px-4 py-6">
         <div className="mobile-specific-container">

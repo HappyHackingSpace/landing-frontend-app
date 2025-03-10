@@ -27,6 +27,10 @@ export interface Translations {
     login: string;
     signup: string;
   };
+  carousel: {
+    slogan: string;
+    buttonText: string;
+  };
 }
 
 // English translations
@@ -56,6 +60,10 @@ const en: Translations = {
     login: 'Login',
     signup: 'Sign Up',
   },
+  carousel: {
+    slogan: 'Innovate. Create. Transform.',
+    buttonText: 'Learn More',
+  },
 };
 
 // Spanish translations
@@ -84,6 +92,10 @@ const tr: Translations = {
     contact: 'İletişim',
     login: 'Giriş',
     signup: 'Kayıt Ol',
+  },
+  carousel: {
+    slogan: 'Yenilik. Yaratıcılık. Dönüşüm.',
+    buttonText: 'Daha Fazla',
   },
 };
 
