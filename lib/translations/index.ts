@@ -21,11 +21,21 @@ export interface Translations {
   };
   navigation: {
     home: string;
-    about: string;
-    services: string;
+    events: string;
+    competitions: string;
+    codeJam: string;
+    hackathon: string;
+    live: string;
+    hhs: string;
+    philosophy: string;
+    manifesto: string;
+    team: string;
+    history: string;
     contact: string;
-    login: string;
-    signup: string;
+    branding: string;
+    stickers: string;
+    blog: string;
+    brandKit: string;
   };
   carousel: {
     slogan: string;
@@ -54,11 +64,21 @@ const en: Translations = {
   },
   navigation: {
     home: 'Home',
-    about: 'About',
-    services: 'Services',
+    events: 'Events',
+    competitions: 'Competitions',
+    codeJam: 'CodeJam',
+    hackathon: 'Hackathon',
+    live: 'Live',
+    hhs: 'HHS',
+    philosophy: 'Philosophy',
+    manifesto: 'Manifesto',
+    team: 'Team',
+    history: 'History',
     contact: 'Contact',
-    login: 'Login',
-    signup: 'Sign Up',
+    branding: 'Branding',
+    stickers: 'Stickers',
+    blog: 'Blog',
+    brandKit: 'Brand Kit',
   },
   carousel: {
     slogan: 'Innovate. Create. Transform.',
@@ -87,11 +107,21 @@ const tr: Translations = {
   },
   navigation: {
     home: 'Anasayfa',
-    about: 'Hakkımızda',
-    services: 'Hizmetler',
+    events: 'Etkinlikler',
+    competitions: 'Yarışmalar',
+    codeJam: 'CodeJam',
+    hackathon: 'Hackathon',
+    live: 'Canlı',
+    hhs: 'HHS',
+    philosophy: 'Felsefe',
+    manifesto: 'Manifesto',
+    team: 'Takım',
+    history: 'Tarihçe',
     contact: 'İletişim',
-    login: 'Giriş',
-    signup: 'Kayıt Ol',
+    branding: 'Marka',
+    stickers: 'Çıkartmalar',
+    blog: 'Blog',
+    brandKit: 'Marka Kiti',
   },
   carousel: {
     slogan: 'Yenilik. Yaratıcılık. Dönüşüm.',

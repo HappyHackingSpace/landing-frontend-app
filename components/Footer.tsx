@@ -1,97 +1,90 @@
 import Link from 'next/link';
+import { useTranslation } from '@/hooks/useTranslation';
+import { getFooterItems } from '@/lib/config/navigation';
+import Logo from './custom/Logo';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const t = useTranslation();
+  const footerItems = getFooterItems(t);
   
   return (
-    <footer className="w-full border-t bg-background">
-      <div className="container py-10 md:py-12">
+    <footer className="border-t bg-background">
+      <div className="container py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Happy Hacking Space</h3>
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="flex items-center space-x-2">
+              <Logo />
+            </Link>
             <p className="text-sm text-muted-foreground">
-              Building the future, one pixel at a time.
+              {t.common.appName} - {new Date().getFullYear()}
             </p>
           </div>
           
-          <div className="space-y-3">
-            <h3 className="text-sm font-semibold">Company</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Blog
-                </Link>
-              </li>
-            </ul>
+          <div className="md:col-span-2 grid grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-sm font-medium mb-4">{t.navigation.home}</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/events" className="text-sm text-muted-foreground hover:text-foreground">
+                    {t.navigation.events}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/live" className="text-sm text-muted-foreground hover:text-foreground">
+                    {t.navigation.live}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground">
+                    {t.navigation.blog}
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-sm font-medium mb-4">{t.navigation.hhs}</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/philosophy" className="text-sm text-muted-foreground hover:text-foreground">
+                    {t.navigation.philosophy}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/manifesto" className="text-sm text-muted-foreground hover:text-foreground">
+                    {t.navigation.manifesto}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/team" className="text-sm text-muted-foreground hover:text-foreground">
+                    {t.navigation.team}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground">
+                    {t.navigation.contact}
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
           
-          <div className="space-y-3">
-            <h3 className="text-sm font-semibold">Resources</h3>
-            <ul className="space-y-2">
+          <div>
+            <h3 className="text-sm font-medium mb-4">{t.navigation.branding}</h3>
+            <ul className="space-y-3">
+              {footerItems.map((item, index) => (
+                <li key={index}>
+                  <Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
               <li>
-                <Link href="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <Link href="/help" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Help Center
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Privacy Policy
+                <Link href="/stickers" className="text-sm text-muted-foreground hover:text-foreground">
+                  {t.navigation.stickers}
                 </Link>
               </li>
             </ul>
-          </div>
-          
-          <div className="space-y-3">
-            <h3 className="text-sm font-semibold">Connect</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="https://twitter.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Twitter
-                </Link>
-              </li>
-              <li>
-                <Link href="https://github.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  GitHub
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="mt-10 border-t pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-xs text-muted-foreground">
-            &copy; {currentYear} Happy Hacking Space, Inc. All rights reserved.
-          </p>
-          <div className="flex items-center gap-4 mt-4 md:mt-0">
-            <Link href="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Terms of Service
-            </Link>
-            <Link href="/privacy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/cookies" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Cookie Policy
-            </Link>
           </div>
         </div>
       </div>
