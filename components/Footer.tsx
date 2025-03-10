@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container py-10 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">MyApp</h3>
+            <h3 className="text-lg font-semibold">Happy Hacking Space</h3>
             <p className="text-sm text-muted-foreground">
               Building the future, one pixel at a time.
             </p>
@@ -80,7 +80,7 @@ const Footer = () => {
         
         <div className="mt-10 border-t pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-muted-foreground">
-            &copy; {currentYear} MyApp, Inc. All rights reserved.
+            &copy; {currentYear} Happy Hacking Space, Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             <Link href="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
