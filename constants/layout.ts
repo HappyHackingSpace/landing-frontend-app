@@ -59,6 +59,10 @@ export const NAV_ITEMS = [
         label: "Stickers",
         href: "/stickers",
       },
+      {
+        label: "Community Stats",
+        href: "/community-stats",
+      },
     ],
   },
   {
@@ -71,9 +75,8 @@ export const FOOTER_ITEMS = [
   {
     label: "Brand Kit",
     href: "/brand",
-  }
+  },
 ];
-
 
 export const SOCIAL_LINKS = [
   {
@@ -105,7 +108,7 @@ export const SOCIAL_LINKS = [
     icon: "Y",
     tooltip: "YouTube",
     href: "https://www.youtube.com/@HappyHackingSpace",
-  }
+  },
 ];
 
 export const FOOTER = {
